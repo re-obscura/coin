@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We Sell and Buy Coins and Collectibles, Gold and Silver in Fairfax, VA</title>
+    <title>Fairfax Coin Exchange - We Buy and Sell Gold, Silver, Coins & Valuables</title>
     <meta name="description"
-        content="Looking to buy or sell coins, collectibles, gold, or silver in Fairfax, VA? Visit Fairfax Coin Exchange.">
+        content="Welcome to Fairfax Coin and Bullion Exchange. Northern Virginia’s respected destination to sell or appraise coins, precious metal bullion, currency, fine jewelry, and collectibles.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Open+Sans:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -27,65 +27,35 @@
                 extend: {
                     colors: {
                         brand: {
-                            gold: '#ebc347',
-                            'gold-rich': '#d4af37',
-                            'gold-bright': '#FFD700',
-                            'gold-dark': '#b8941f',
-                            dark: '#232428',
-                            'dark-premium': '#0f0f0f',
-                            'dark-elegant': '#1a1a1a',
-                            card: '#3d3a3a',
-                            'card-glass': 'rgba(61, 58, 58, 0.4)',
-                            light: '#f2f2f2',
-                            danger: '#ce3222',
+                            gold: '#D4AF37',       // Classic Gold
+                            'gold-light': '#F3E5AB', // Champagne
+                            'gold-dark': '#AA8C2C',  // Dark Gold
+                            dark: '#121212',       // Deep Black
+                            'dark-gray': '#1E1E1E', // Dark Gray BG
+                            surface: '#252525',    // Card Surface
                         }
                     },
                     fontFamily: {
                         sans: ['"Open Sans"', 'sans-serif'],
                         heading: ['"Montserrat"', 'sans-serif'],
                     },
-                    maxWidth: {
-                        'container': '1200px',
-                    },
                     boxShadow: {
-                        'glow': '0 0 15px rgba(235, 195, 71, 0.3)',
-                        'glow-lg': '0 0 30px rgba(235, 195, 71, 0.4), 0 0 60px rgba(235, 195, 71, 0.2)',
-                        'glow-xl': '0 0 40px rgba(255, 215, 0, 0.5), 0 0 80px rgba(255, 215, 0, 0.3)',
-                        'premium': '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 215, 0, 0.1)',
+                        'gold-glow': '0 0 20px rgba(212, 175, 55, 0.15)',
+                        'gold-glow-hover': '0 0 30px rgba(212, 175, 55, 0.3)',
+                        'inner-light': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                     },
                     backgroundImage: {
-                        'gold-gradient': 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
-                        'gold-shine': 'linear-gradient(135deg, #FFD700 0%, #d4af37 50%, #FFD700 100%)',
-                        'dark-gradient': 'linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%)',
+                        'gradient-gold': 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8C2C 100%)',
+                        'gradient-dark': 'linear-gradient(180deg, rgba(18,18,18,0) 0%, #121212 100%)',
                     },
                     animation: {
-                        'float': 'float 3s ease-in-out infinite',
-                        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-                        'slide-up': 'slide-up 0.6s ease-out',
-                        'fade-in': 'fade-in 0.8s ease-out',
-                        'shimmer': 'shimmer 2s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                     },
                     keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'glow-pulse': {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.4)' },
-                            '50%': { boxShadow: '0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3)' },
-                        },
-                        'slide-up': {
-                            '0%': { transform: 'translateY(30px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        'fade-in': {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        shimmer: {
-                            '0%': { backgroundPosition: '-200% 0' },
-                            '100%': { backgroundPosition: '200% 0' },
-                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -93,575 +63,338 @@
     </script>
 
     <style>
+        /* Global Styles */
         body {
             font-family: 'Open Sans', sans-serif;
-            background-color: #0f0f0f;
-            color: #f2f2f2;
-            line-height: 1.7;
+            background-color: #121212;
+            color: #E0E0E0;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
         }
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: #0f0f0f;
+            background: #121212;
         }
-
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #d4af37, #FFD700);
-            border-radius: 6px;
-            border: 2px solid #0f0f0f;
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #FFD700, #fda085);
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-header {
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Premium Buttons */
-        .btn-gold {
-            background: linear-gradient(135deg, #FFD700 0%, #d4af37 100%);
-            color: #0f0f0f;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 16px 40px;
-            border: 2px solid #FFD700;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-block;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-gold::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .btn-gold:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.3), 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn-outline-gold {
-            background-color: transparent;
-            color: #FFD700;
-            font-family: 'Montserrat', sans-serif;
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37, #AA8C2C);
+            color: #000;
             font-weight: 700;
             text-transform: uppercase;
-            padding: 14px 35px;
-            border: 2px solid #FFD700;
-            transition: all 0.4s ease;
-            display: inline-block;
-            cursor: pointer;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .btn-outline-gold::after {
+        .btn-primary::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 0;
-            background: linear-gradient(135deg, #FFD700, #d4af37);
-            transition: height 0.4s ease;
-            z-index: -1;
-        }
-
-        .btn-outline-gold:hover::after {
             height: 100%;
+            background: linear-gradient(135deg, #F3E5AB, #D4AF37);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
         }
 
-        .btn-outline-gold:hover {
-            color: #0f0f0f;
-            border-color: #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        .btn-primary:hover::before {
+            opacity: 1;
         }
 
-        /* Hero Animated Gradient Overlay */
-        .hero-overlay {
-            background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(35, 36, 40, 0.85) 50%, rgba(15, 15, 15, 0.95) 100%);
-            animation: gradient-shift 10s ease infinite;
-            background-size: 200% 200%;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }
 
-        @keyframes gradient-shift {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        /* Floating Particles */
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, #FFD700, transparent);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float-particle 15s infinite ease-in-out;
-        }
-
-        @keyframes float-particle {
-
-            0%,
-            100% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 0.6;
-            }
-
-            90% {
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: translateY(-100vh) translateX(50px) scale(0.5);
-                opacity: 0;
-            }
-        }
-
-        /* Glassmorphism */
-        .glass-card {
-            background: rgba(61, 58, 58, 0.3);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Gold List Enhanced */
-        .gold-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 14px;
+        .btn-outline {
+            background: transparent;
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border-radius: 4px;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .gold-list li:hover {
-            padding-left: 35px;
-            border-bottom-color: rgba(255, 215, 0, 0.3);
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #F3E5AB;
+            border-color: #F3E5AB;
         }
 
-        .gold-list li:last-child {
-            border-bottom: none;
+        /* Text Gradients */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .gold-list li::before {
-            content: "✓";
-            font-family: Arial, sans-serif;
-            font-weight: 900;
-            color: #FFD700;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 18px;
-            animation: glow-pulse 2s ease-in-out infinite;
-        }
-
-        /* Divider Enhanced */
-        .divider-gold {
-            height: 4px;
-            width: 80px;
-            background: linear-gradient(90deg, transparent, #FFD700, transparent);
-            margin: 25px auto;
-            position: relative;
-        }
-
-        .divider-gold::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 12px;
-            height: 12px;
-            background: #FFD700;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #FFD700;
-        }
-
-        /* Input Styling Enhanced */
-        .input-dark {
-            background-color: rgba(26, 26, 26, 0.8);
-            border: 1px solid #4a4a4a;
-            color: #fff;
-            padding: 16px;
-            width: 100%;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .input-dark:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 0 3px rgba(255, 215, 0, 0.1);
-            background-color: rgba(26, 26, 26, 0.95);
-        }
-
-        /* Feature Card Premium */
-        .feature-card {
-            background: linear-gradient(135deg, rgba(61, 58, 58, 0.5) 0%, rgba(26, 26, 26, 0.5) 100%);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            transform: scale(0);
-            transition: transform 0.6s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: scale(1);
-        }
-
-        .feature-card:hover {
-            border-color: #FFD700;
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: linear-gradient(180deg, rgba(26, 26, 26, 0.98), rgba(15, 15, 15, 0.98));
-            backdrop-filter: blur(20px);
-        }
-
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-
-        /* Slider Animations */
-        .slide {
-            display: none;
-            animation: fadeInScale 1.2s ease;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(1.1);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Scroll Reveal */
-        .scroll-reveal {
+        /* Animations */
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s ease;
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
 
-        .scroll-reveal.revealed {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Shimmer Effect */
-        .shimmer {
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
+        /* Custom List Bullets */
+        .list-gold li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+        .list-gold li::before {
+            content: '\f00c'; /* FontAwesome check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 0.8em;
         }
 
-        /* Image Hover Zoom */
-        .zoom-on-hover {
-            transition: transform 0.6s ease;
+        /* Input Styles */
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s;
         }
-
-        .zoom-on-hover:hover {
-            transform: scale(1.05);
-        }
-
-        /* Glowing Border Animation */
-        @keyframes border-glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 5px rgba(255, 215, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.2);
-            }
-
-            50% {
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
-            }
-        }
-
-        .border-glow-animate {
-            animation: border-glow 3s ease-in-out infinite;
-        }
-
-        /* Premium Text Shadow */
-        .text-glow {
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.1);
-        }
-
-        /* Stagger Animation for Cards */
-        .stagger-item {
-            animation-delay: calc(var(--stagger-index, 0) * 0.1s);
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased selection:bg-brand-gold selection:text-black">
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm" onclick="toggleMenu()">
-    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleMenu()"></div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="mobile-menu fixed top-0 left-0 w-72 h-full bg-brand-card z-50 shadow-2xl border-r border-gray-700 overflow-y-auto">
-        <div class="p-6 border-b border-gray-700 flex justify-between items-center">
-            <span class="font-bold text-xl text-brand-gold font-heading uppercase">Menu</span>
-            <button onclick="toggleMenu()" class="text-white hover:text-brand-gold transition">
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-brand-surface z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col">
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-brand-dark-gray">
+            <span class="font-heading font-bold text-xl text-brand-gold">Menu</span>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-brand-gold transition-colors">
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
-        <nav class="p-6">
-            <ul class="space-y-4">
-                <li><a href="#" class="block text-lg text-white hover:text-brand-gold font-bold transition">Home</a>
-                </li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Coins</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Silver</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Gold</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Jewelry</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Watches</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Currency</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Stamps</a></li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Collectibles</a>
-                </li>
-                <li><a href="#" class="block text-lg text-gray-400 hover:text-brand-gold transition">Contacts</a></li>
+        <nav class="flex-1 overflow-y-auto p-6">
+            <ul class="space-y-6 text-lg font-medium">
+                <li><a href="#home" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+                <li><a href="#coins" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a></li>
+                <li><a href="#bullion" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver & Gold</a></li>
+                <li><a href="#jewelry" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry & Watches</a></li>
+                <li><a href="#currency" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency & Stamps</a></li>
+                <li><a href="#collectibles" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="#contact" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
             </ul>
         </nav>
+        <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
+            <button onclick="openModal(); toggleMenu()" class="btn-primary w-full justify-center">
+                Consult Experts
+            </button>
+        </div>
     </div>
 
     <!-- Header -->
-    <header
-        class="fixed w-full top-0 z-30 bg-brand-dark-premium/90 backdrop-blur-lg shadow-premium border-b border-brand-gold-bright/20">
-        <div class="max-w-container mx-auto px-4">
-            <div class="flex justify-between items-center h-24">
+    <header class="fixed w-full top-0 z-30 glass-header transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
 
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="p-1 rounded-sm">
-                        <img src="resources/fair-logo.png" alt="Fairfax Coin Logo" class="h-12 w-auto">
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <img src="resources/fair-logo.png" onerror="this.src='https://placehold.co/60x60/1a1a1a/D4AF37?text=FC'" alt="Fairfax Coin Logo" class="h-10 w-auto relative z-10">
                     </div>
-                    <div class="hidden sm:block leading-tight">
-                        <div
-                            class="text-brand-gold font-black font-heading text-lg tracking-wider group-hover:text-white transition">
-                            FAIRFAX</div>
-                        <div class="text-white text-xs font-bold tracking-widest uppercase">Coin and Bullion Exchange
-                        </div>
+                    <div class="flex flex-col">
+                        <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin & Bullion</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
-                <nav class="hidden lg:block">
-                    <ul class="flex gap-8 text-sm font-bold uppercase tracking-wide">
-                        <li><a href="#" class="text-brand-gold border-b-2 border-brand-gold pb-1">Home</a></li>
-                        <li><a href="#" class="text-white hover:text-brand-gold transition-colors">Coins</a></li>
-                        <li><a href="#" class="text-white hover:text-brand-gold transition-colors">Gold</a></li>
-                        <li><a href="#" class="text-white hover:text-brand-gold transition-colors">Jewelry</a></li>
-                        <li><a href="#" class="text-white hover:text-brand-gold transition-colors">More <i
-                                    class="fas fa-chevron-down text-xs ml-1"></i></a></li>
-                        <li><a href="#" class="text-white hover:text-brand-gold transition-colors">Contacts</a></li>
-                    </ul>
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
+                    <a href="#coins" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Coins</a>
+                    <a href="#bullion" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Gold & Silver</a>
+                    <a href="#jewelry" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
+                    <a href="#collectibles" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
+                    <a href="#contact" class="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
                 </nav>
 
-                <!-- Mobile Hamburger -->
-                <button
-                    class="lg:hidden text-brand-gold text-2xl p-2 border border-brand-gold rounded hover:bg-brand-gold hover:text-brand-dark transition"
-                    onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <!-- CTA & Hamburger -->
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal()" class="hidden lg:inline-flex btn-primary !py-2 !px-6 !text-xs">
+                        Consult Experts
+                    </button>
+                    <button class="lg:hidden text-white hover:text-brand-gold transition-colors p-2" onclick="toggleMenu()" aria-label="Open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24">
+    <main>
 
         <!-- Hero Section -->
-        <section class="relative min-h-[600px] flex items-center bg-cover bg-center bg-fixed"
-            style="background-image: url('https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/top-fon-coin-01.webp');">
-            <div class="absolute inset-0 hero-overlay"></div>
+        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/top-fon-coin-01.webp" alt="Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/70"></div>
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-gold/5 blur-[100px] rounded-full transform translate-x-1/3"></div>
+            </div>
 
-            <div class="max-w-container mx-auto px-4 relative z-10 w-full py-12">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <!-- Text Content -->
-                    <div class="w-full lg:w-1/2 text-center lg:text-left scroll-reveal">
-                        <div
-                            class="inline-block px-4 py-2 border-2 border-brand-gold-bright text-brand-gold-bright text-xs font-bold uppercase tracking-widest mb-6 bg-brand-gold-bright/10 backdrop-blur-sm">
-                            <i class="fas fa-map-marker-alt mr-2"></i>Fairfax, VA
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 lg:py-0">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                    <!-- Content -->
+                    <div class="text-center lg:text-left reveal active">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-8">
+                            <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                            Fairfax, VA
                         </div>
-                        <h1
-                            class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 leading-tight animate-fade-in">
-                            We buy and sell <span class="text-brand-gold-bright text-glow">Gold</span>, Silver &
-                            Valuables
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                            We buy and sell <br>
+                            <span class="text-gradient-gold">Gold, Silver, Coins</span> <br>
+                            & Valuables
                         </h1>
-                        <p class="text-lg md:text-xl text-gray-300 mb-8 font-light leading-relaxed">
-                            Welcome to Fairfax Coin and Bullion Exchange. We are committed to integrity and providing
-                            <strong class="text-white font-semibold">maximum value</strong> for your holdings.
+                        <p class="text-lg text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Welcome to Fairfax Coin and Bullion Exchange, Northern Virginia’s respected destination for individuals looking to sell or appraise their coins, precious metal bullion, currency, fine jewelry, and unique collectibles.
                         </p>
 
-                        <!-- Trust Indicators -->
-                        <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 text-sm">
-                            <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-full border-glow-animate">
-                                <i class="fas fa-star text-brand-gold-bright"></i>
-                                <span class="text-white font-bold">5.0</span>
-                                <span class="text-gray-400">Rating</span>
-                            </div>
-                            <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
-                                <i class="fas fa-shield-alt text-brand-gold-bright"></i>
-                                <span class="text-gray-300">Licensed & Insured</span>
-                            </div>
-                            <div class="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
-                                <i class="fas fa-clock text-brand-gold-bright"></i>
-                                <span class="text-gray-300">25+ Years</span>
-                            </div>
-                        </div>
-
-                        <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
-                            <button onclick="openModal()" class="btn-gold text-base md:text-lg">
-                                <i class="fas fa-comments mr-2"></i>Consult Experts
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button onclick="openModal()" class="btn-primary">
+                                <i class="fas fa-comments"></i> Consult Experts
                             </button>
-                            <a href="#contact" class="btn-outline-gold text-base md:text-lg">
-                                <i class="fas fa-envelope mr-2"></i>Contact Us
+                            <a href="#services" class="btn-outline">
+                                <i class="fas fa-info-circle"></i> Read More
                             </a>
                         </div>
                     </div>
 
-                    <!-- Slider -->
-                    <div class="w-full lg:w-1/2 scroll-reveal" style="animation-delay: 0.2s;">
-                        <div
-                            class="relative w-full max-w-[500px] mx-auto glass-card border-2 border-brand-gold-bright/30 p-3 rounded-2xl shadow-premium border-glow-animate">
-                            <div class="slider-container relative overflow-hidden rounded-xl shadow-2xl aspect-[4/3]">
-                                <img class="slide active w-full h-full object-cover zoom-on-hover"
-                                    src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-watch-450x350.webp"
-                                    alt="Watch">
-                                <img class="slide w-full h-full object-cover zoom-on-hover"
-                                    src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/silver-450x350.webp"
-                                    alt="Silver">
-                                <img class="slide w-full h-full object-cover zoom-on-hover"
-                                    src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/coin-02-450x350.jpg"
-                                    alt="Coins">
-                                <img class="slide w-full h-full object-cover zoom-on-hover"
-                                    src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-450x350.webp"
-                                    alt="Gold">
-                                <!-- Overlay on slider -->
-                                <div
-                                    class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6">
-                                    <p
-                                        class="text-brand-gold-bright font-bold text-base uppercase tracking-wider text-center flex items-center justify-center gap-2">
-                                        <i class="fas fa-chart-line animate-float"></i>
-                                        <span class="text-glow">Top Market Prices</span>
-                                    </p>
+                    <!-- Visual/Slider -->
+                    <div class="relative reveal delay-200">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3] group">
+                            <!-- Slider Images -->
+                            <div id="hero-slider" class="w-full h-full relative">
+                                <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-watch-450x350.webp" alt="Watch">
+                                <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/silver-450x350.webp" alt="Silver">
+                                <img class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/coin-02-450x350.jpg" alt="Coins">
+                            </div>
+
+                            <!-- Glass Card Overlay -->
+                            <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-xl flex items-center justify-between">
+                                <div>
+                                    <p class="text-white font-bold text-sm">Market Insights</p>
+                                    <p class="text-brand-gold text-xs">Updated Daily</p>
+                                </div>
+                                <div class="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-brand-dark">
+                                    <i class="fas fa-chart-line"></i>
                                 </div>
                             </div>
                         </div>
+                        <!-- Decor border behind -->
+                        <div class="absolute -inset-4 border border-brand-gold/20 rounded-2xl z-[-1] hidden lg:block"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Intro / Video Section -->
-        <section class="py-20 bg-white scroll-reveal">
-            <div class="max-w-container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-4">Liquidate or Acquire</h2>
-                    <div class="divider-gold"></div>
-                    <p class="text-gray-600 max-w-2xl mx-auto text-lg">Your Trusted Partner for Valuables in Fairfax,
-                        VA. We offer expert market insights whether you are selling a single item or an entire
-                        collection.</p>
+        <!-- Services / Intro -->
+        <section id="services" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 font-heading uppercase">Liquidate or Acquire</h2>
+                    <div class="w-24 h-1 bg-brand-gold mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Your Trusted Partner for Valuables in Fairfax, VA. Fairfax Coin and Bullion Exchange facilitates the acquisition and liquidation of a diverse range of tangible assets.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Video Wrapper -->
-                    <div class="order-2 lg:order-1">
-                        <div class="relative rounded-lg overflow-hidden border border-gray-700 shadow-2xl group">
-                            <div class="aspect-w-16 aspect-h-9 w-full bg-black">
-                                <iframe
-                                    class="absolute top-0 left-0 w-full h-full opacity-90 group-hover:opacity-100 transition duration-500"
-                                    src="https://www.youtube.com/embed/3LcE2CDXVm4?si=embed"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <!-- Decorative border -->
-                            <div class="absolute inset-0 border-2 border-brand-gold/20 pointer-events-none"></div>
+                    <!-- Video Section -->
+                    <div class="reveal">
+                        <div class="relative rounded-xl overflow-hidden shadow-2xl aspect-video group cursor-pointer">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/3LcE2CDXVm4?si=embed&controls=0" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <!-- Text -->
-                    <div class="order-1 lg:order-2 space-y-6">
-                        <div class="feature-card p-8 rounded-lg bg-gray-50 border border-gray-200">
-                            <h3 class="text-brand-gold font-bold text-xl mb-4">Why Choose Us?</h3>
-                            <p class="mb-4 text-gray-700">Fairfax Coin and Bullion Exchange facilitates the acquisition
-                                and liquidation of a diverse range of tangible assets.</p>
-                            <ul class="gold-list text-gray-700 text-sm">
-                                <li>Expert appraisals and market insights</li>
-                                <li>Immediate payment for your items</li>
-                                <li>Secure and private transactions</li>
+
+                    <!-- Features List -->
+                    <div class="space-y-8 reveal">
+                        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+                            <h3 class="text-xl font-bold text-brand-dark mb-4 flex items-center gap-3">
+                                <i class="fas fa-check-circle text-brand-gold text-2xl"></i>
+                                Why Choose Us?
+                            </h3>
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2.5"></span>
+                                    <span><strong>Expert Insights:</strong> We offer expert market insights whether you are selling a single item or an entire collection.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2.5"></span>
+                                    <span><strong>Integrity:</strong> We are committed to integrity and providing maximum value for your holdings.</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -669,464 +402,457 @@
             </div>
         </section>
 
-        <!-- Alternating Features Sections -->
+        <!-- Coins Section (Dark) -->
+        <section id="coins" class="py-24 bg-brand-dark-gray relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1 reveal">
+                        <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Numismatics</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">Numismatic Coins</h2>
+                        <h3 class="text-xl text-gray-300 mb-6 font-heading">U.S. and World Coins Assessed Fairly</h3>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            As experienced numismatists and coin buyers in Fairfax, we actively seek U.S. Coinage, rare specimens, pre-1965 silver, and investment-grade pieces.
+                        </p>
 
-        <!-- Coins -->
-        <section class="py-20 bg-brand-card relative overflow-hidden scroll-reveal">
-            <!-- Decorative Background Element -->
-            <div
-                class="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
-            </div>
-
-            <div class="max-w-container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="w-full lg:w-1/2">
-                        <div class="relative">
-                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/coins-03.webp"
-                                alt="Coins" class="w-full rounded shadow-2xl border-b-4 border-brand-gold">
-                            <div
-                                class="absolute -bottom-6 -right-6 bg-brand-dark p-4 border border-brand-gold hidden md:block">
-                                <i class="fas fa-coins text-3xl text-brand-gold"></i>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                            <div class="glass-panel p-4 rounded-lg border-l-2 border-brand-gold">
+                                <h4 class="text-white font-bold mb-1">International Coins</h4>
+                                <p class="text-xs text-gray-400">Gold/Silver Maple Leafs, Krugerrands, Pandas, Koalas.</p>
+                            </div>
+                            <div class="glass-panel p-4 rounded-lg border-l-2 border-brand-gold">
+                                <h4 class="text-white font-bold mb-1">Graded Coins</h4>
+                                <p class="text-xs text-gray-400">Certified by PGCS, NGC, CAC (slabbed coins).</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-black text-white mb-6">Numismatic Coins</h2>
-                        <p class="text-brand-gold font-semibold mb-6">U.S. and World Coins Assessed Fairly</p>
 
-                        <div class="bg-brand-dark/50 p-6 border-l-4 border-brand-gold">
-                            <ul class="gold-list text-gray-300">
-                                <li><strong class="text-white">United States Coinage:</strong> Rare specimens, pre-1965
-                                    silver, investment-grade.</li>
-                                <li><strong class="text-white">International Coins:</strong> Gold/Silver Maple Leafs,
-                                    Krugerrands, Pandas.</li>
-                                <li><strong class="text-white">Graded Coins:</strong> Certified by PGCS, NGC, CAC.</li>
-                                <li><strong class="text-white">Collections:</strong> From single items to extensive
-                                    hoards.</li>
-                            </ul>
-                        </div>
-                        <div class="mt-8">
-                            <a href="#"
-                                class="text-brand-gold font-bold uppercase tracking-wider hover:text-white transition group">
-                                Learn More <i
-                                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
-                            </a>
+                        <a href="#contact" class="btn-primary">Appraise Coins</a>
+                    </div>
+                    <div class="order-1 lg:order-2 reveal">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-brand-gold rounded-2xl transform rotate-3 opacity-20"></div>
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/coins-03.webp" alt="Coins" class="relative rounded-2xl shadow-2xl w-full object-cover border border-white/10 hover:scale-[1.02] transition-transform duration-500">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bullion -->
-        <section class="py-20 bg-brand-dark-premium scroll-reveal">
-            <div class="max-w-container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
-                    <div class="w-full lg:w-1/2">
-                        <div class="relative">
-                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-002.webp"
-                                alt="Gold Bullion" class="w-full rounded shadow-2xl border-b-4 border-brand-gold">
+        <!-- Bullion Section (Darker) -->
+        <section id="bullion" class="py-24 bg-brand-dark relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-brand-gold-dark rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-002.webp" alt="Gold Bullion" class="relative rounded-2xl w-full shadow-2xl">
                         </div>
                     </div>
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-black text-white mb-6">Precious Metal Bullion</h2>
-                        <p class="text-brand-gold font-semibold mb-6">Gold, Silver, and Platinum Investments</p>
-                        <p class="text-gray-400 mb-6">Realize the value of your bullion holdings with us. We transact in
-                            all forms of recognized bullion.</p>
+                    <div class="reveal">
+                        <span class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2 block">Investments</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-heading">Precious Metal Bullion</h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            Realize the value of your bullion holdings with us. We transact in gold, silver, and platinum investments.
+                        </p>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="feature-card p-4 rounded">
-                                <i class="fas fa-gem text-brand-gold mb-2"></i>
-                                <h4 class="font-bold text-white">Gold Bullion</h4>
-                                <p class="text-xs text-gray-400">Bars, rounds, American Eagles.</p>
-                            </div>
-                            <div class="feature-card p-4 rounded">
-                                <i class="fas fa-ring text-brand-gold mb-2"></i>
-                                <h4 class="font-bold text-white">Silver Bullion</h4>
-                                <p class="text-xs text-gray-400">.999 fine bars, Sterling pieces.</p>
-                            </div>
-                            <div class="feature-card p-4 rounded">
-                                <i class="fas fa-layer-group text-brand-gold mb-2"></i>
-                                <h4 class="font-bold text-white">Platinum</h4>
-                                <p class="text-xs text-gray-400">Bars and rounds for diversification.</p>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <a href="#" class="btn-outline-gold text-sm">View Bullion</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Jewelry & Watches -->
-        <section class="py-20 bg-brand-card relative overflow-hidden scroll-reveal">
-            <!-- Decorative Background Element -->
-            <div
-                class="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3">
-            </div>
-
-            <div class="max-w-container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="w-full lg:w-1/2">
-                        <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Jewelry-01.webp"
-                            alt="Jewelry"
-                            class="w-full rounded shadow-2xl border-b-4 border-brand-gold grayscale hover:grayscale-0 transition duration-700">
-                    </div>
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-black text-white mb-6">Fine Jewelry & Watches</h2>
-                        <div class="divider-gold mx-0"></div>
-                        <p class="text-gray-300 mb-6">We evaluate and purchase luxury items regardless of condition.</p>
-
-                        <ul class="gold-list text-gray-300">
-                            <li><strong class="text-white">Gold & Platinum:</strong> Necklaces, rings, bracelets (even
-                                broken).</li>
-                            <li><strong class="text-white">Sterling Silver:</strong> Designer pieces and antiques.</li>
-                            <li><strong class="text-white">Premier Watches:</strong> Rolex and other prestigious brands.
-                            </li>
-                            <li><strong class="text-white">Diamonds:</strong> Loose and set, certified or uncertified.
-                            </li>
+                        <ul class="list-gold text-gray-300 space-y-3 mb-8">
+                            <li><strong>Gold Bullion:</strong> All forms, including recognized bars, rounds, and Gold American Eagles.</li>
+                            <li><strong>Silver Bullion:</strong> .999 fine silver bars, rounds, Silver American Eagles, and Franklin Mint sterling.</li>
+                            <li><strong>Platinum Bullion:</strong> Bars and rounds for investment diversification.</li>
                         </ul>
+
+                        <button onclick="openModal()" class="btn-outline">Check Prices</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Currency, Stamps, Collectibles Grid -->
-        <section class="py-20 bg-white scroll-reveal">
-            <div class="max-w-container mx-auto px-4">
-                <h2 class="text-3xl font-black text-brand-dark text-center mb-12">Other Valuables</h2>
+        <!-- Jewelry Section -->
+        <section id="jewelry" class="py-24 bg-brand-surface border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">Fine Jewelry & Luxury Watches</h2>
+                    <p class="text-gray-400">We evaluate and purchase diamonds, gold, and estate jewelry regardless of condition.</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Currency -->
-                    <div class="feature-card rounded-lg overflow-hidden group bg-black border border-gray-200">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Currency-06.webp"
-                                alt="Currency"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass-panel p-0 rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Jewelry-01.webp" alt="Jewelry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-brand-gold mb-3">Paper Currency</h3>
-                            <p class="text-gray-700 text-sm mb-4">Vintage U.S. Paper Money, Gold certificates, National
-                                Bank Notes, and foreign banknotes.</p>
-                            <a href="#" class="text-brand-dark text-xs font-bold uppercase hover:text-brand-gold">Read
-                                More
-                                &rarr;</a>
+                            <h3 class="text-xl font-bold text-white mb-2">Jewelry & Diamonds</h3>
+                            <p class="text-sm text-gray-400 mb-4">Gold and Platinum jewelry (even broken), Sterling Silver designer pieces, and certified/uncertified Diamonds.</p>
                         </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-panel p-0 rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal delay-100">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/gold-watch-450x350.webp" alt="Watches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Premier Watches</h3>
+                            <p class="text-sm text-gray-400 mb-4">Rolex and other prestigious brands, especially gold-cased models.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-panel p-0 rounded-xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal delay-200">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Collectible-toys.webp" alt="Collectibles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Collectibles</h3>
+                            <p class="text-sm text-gray-400 mb-4">Sterling Silverware, vintage toys in original packaging, and historically significant memorabilia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Valuables (Currency & Stamps) -->
+        <section id="currency" class="py-24 bg-brand-dark-gray relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Currency -->
+                    <div class="glass-panel p-8 rounded-xl reveal">
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading"><i class="fas fa-money-bill-wave text-brand-gold mr-3"></i>Paper Currency</h3>
+                        <p class="text-gray-400 mb-4">Our expertise extends to collectible currency, including:</p>
+                        <ul class="list-gold text-gray-300 text-sm">
+                            <li><strong>Vintage U.S. Paper Money:</strong> Gold certificates, silver certificates (blue and yellow seal), National Bank Notes.</li>
+                            <li>Large-size Federal Reserve Notes, Hawaiian overprints, and fractional currency.</li>
+                            <li>Historically significant foreign banknotes.</li>
+                        </ul>
                     </div>
 
                     <!-- Stamps -->
-                    <div class="feature-card rounded-lg overflow-hidden group bg-gray-50 border border-gray-200">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Stamps.webp"
-                                alt="Stamps"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-brand-gold mb-3">Rare Stamps</h3>
-                            <p class="text-gray-700 text-sm mb-4">We buy collections with at least $500 face value.
-                                Albums, sheets, and books of usable stamps.</p>
-                            <a href="#" class="text-brand-dark text-xs font-bold uppercase hover:text-brand-gold">Read
-                                More
-                                &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Collectibles -->
-                    <div class="feature-card rounded-lg overflow-hidden group bg-gray-50 border border-gray-200">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/Collectible-toys.webp"
-                                alt="Collectibles"
-                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-brand-gold mb-3">Collectibles</h3>
-                            <p class="text-gray-700 text-sm mb-4">Sterling silverware, vintage toys in original boxes,
-                                and historically significant memorabilia.</p>
-                            <a href="#" class="text-brand-dark text-xs font-bold uppercase hover:text-brand-gold">Read
-                                More
-                                &rarr;</a>
-                        </div>
+                    <div class="glass-panel p-8 rounded-xl reveal delay-100">
+                        <h3 class="text-2xl font-bold text-white mb-4 font-heading"><i class="fas fa-mail-bulk text-brand-gold mr-3"></i>Stamps</h3>
+                        <p class="text-gray-400 mb-4 text-sm">We buy stamp collections with at least $500 total face value.</p>
+                        <ul class="list-gold text-gray-300 text-sm">
+                            <li>Collections of rarities and limited editions.</li>
+                            <li>New Albums should include SHEETS, BOOKS, or Rolls of usable STAMPS.</li>
+                            <li>Non-franked and uncancelled stamps.</li>
+                            <li class="italic text-xs text-gray-500">Note: We don’t purchase first day of release or first edition stamps.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Info -->
-        <section class="py-20 bg-gradient-to-b from-brand-card to-brand-dark-premium scroll-reveal">
-            <div class="max-w-container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                    <div>
-                        <h2 class="text-2xl font-black text-white mb-6"><i
-                                class="fas fa-balance-scale text-brand-gold mr-3"></i>Valuation Services</h2>
-                        <p class="text-gray-400 mb-4">Fairfax Coin and Bullion Exchange offers more than just
-                            transactions; we provide crucial expertise.</p>
-                        <ul class="gold-list text-gray-300">
-                            <li><strong class="text-white">Appraisals:</strong> Honest verbal assessments and formal
-                                written appraisals for insurance or estate planning.</li>
-                            <li><strong class="text-white">Estate Advisory:</strong> Collaboration with attorneys and
-                                executors for estate liquidation. Confidential house calls available.</li>
-                        </ul>
+        <!-- Specialized Services -->
+        <section class="py-24 bg-gradient-to-r from-brand-dark to-brand-dark-gray border-t border-white/5">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold text-white mb-6 font-heading">Specialized Valuation & Estate Consultation</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-brand-gold font-bold text-lg mb-2">Professional Valuation Services</h4>
+                                <p class="text-gray-400 text-sm">Receive honest and safe appraisals. We offer verbal assessments and formal written appraisals suitable for insurance, estate planning, or legal purposes.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-brand-gold font-bold text-lg mb-2">Estate Advisory & Liquidation</h4>
+                                <p class="text-gray-400 text-sm">We collaborate with fiduciaries, attorneys, and executors. Confidential house calls can be arranged for substantial collections in the Fairfax and broader metropolitan DC area.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="text-2xl font-black text-white mb-6"><i
-                                class="fas fa-handshake text-brand-gold mr-3"></i>The Advantage</h2>
-                        <p class="text-gray-400 mb-4">Choosing us means partnering with industry veterans.</p>
-                        <ul class="gold-list text-gray-300">
-                            <li>Deep market knowledge & current pricing monitoring.</li>
-                            <li>Confidential, by-appointment consultations.</li>
-                            <li>Licensed and Insured professionals.</li>
-                            <li>Focus on client education and transparency.</li>
+
+                    <div class="reveal delay-100">
+                        <h2 class="text-3xl font-bold text-white mb-6 font-heading">The Advantage</h2>
+                        <ul class="list-gold text-gray-300 space-y-3">
+                            <li><strong>Industry Veterans:</strong> Decades of hands-on experience.</li>
+                            <li><strong>Current Market Pricing:</strong> Competitive offers reflecting true current values.</li>
+                            <li><strong>Confidential, By-Appointment:</strong> Ensuring privacy and undivided attention.</li>
+                            <li><strong>Licensed and Insured:</strong> Full commitment to ethical practices.</li>
+                            <li><strong>Client Education:</strong> We explain our evaluation process clearly.</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="mt-16 bg-brand-gold/10 border border-brand-gold p-8 rounded text-center">
+                <div class="mt-16 p-6 border border-brand-gold/30 rounded-lg bg-brand-gold/5 text-center reveal">
                     <h3 class="text-xl font-bold text-white mb-2">By Appointment Only</h3>
-                    <p class="text-brand-gold mb-0">To ensure privacy and undivided attention, all evaluations are
-                        conducted by appointment.</p>
+                    <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                        To provide each client with detailed attention, all evaluations are conducted by appointment only.
+                        Please do not clean your coins as it reduces numismatic value.
+                    </p>
                 </div>
-            </div>
+             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-brand-dark-premium relative scroll-reveal">
-            <div class="max-w-container mx-auto px-4">
-                <div
-                    class="bg-brand-card p-8 md:p-12 rounded-lg shadow-2xl border-t-4 border-brand-gold flex flex-col lg:flex-row gap-12">
+        <section id="contact" class="py-24 bg-gradient-to-b from-brand-dark to-black relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-brand-surface rounded-2xl overflow-hidden shadow-2xl border border-white/5 flex flex-col lg:flex-row">
 
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-black text-white mb-6">Contact Our Experts</h2>
-                        <p class="text-gray-400 mb-8">Ready to sell or appraise? Fill out the form or call us directly.
-                            We buy and sell coins in Fairfax, VA at fair market prices.</p>
+                    <!-- Contact Info -->
+                    <div class="w-full lg:w-5/12 p-10 lg:p-12 bg-brand-gold relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
 
-                        <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Connect With Us</h2>
+                        <p class="text-brand-dark/80 mb-10 font-medium">Ready to explore the value of your items? Book your private consultation today.</p>
+
+                        <div class="space-y-6 relative z-10">
                             <div class="flex items-start gap-4">
-                                <div class="bg-brand-gold p-3 rounded text-brand-dark">
-                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                <div class="w-10 h-10 rounded-full bg-brand-dark/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-brand-dark text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Visit Us</h4>
-                                    <p class="text-gray-400 text-sm">2970 Palmer St<br>Oakton, VA 22124</p>
+                                    <h5 class="font-bold text-brand-dark">Address</h5>
+                                    <p class="text-brand-dark/80 text-sm">2970 Palmer St, Oakton, VA 22124</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="bg-brand-gold p-3 rounded text-brand-dark">
-                                    <i class="fas fa-phone-alt text-xl"></i>
+                                <div class="w-10 h-10 rounded-full bg-brand-dark/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-brand-dark text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Call Us</h4>
-                                    <a href="tel:+17037039355"
-                                        class="text-gray-400 hover:text-brand-gold text-sm transition">(703)
-                                        703-9355</a>
+                                    <h5 class="font-bold text-brand-dark">Phone</h5>
+                                    <a href="tel:+17037039355" class="text-brand-dark/80 text-sm hover:underline">(703) 703-9355</a>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
-                                <div class="bg-brand-gold p-3 rounded text-brand-dark">
-                                    <i class="fas fa-envelope text-xl"></i>
+                                <div class="w-10 h-10 rounded-full bg-brand-dark/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-brand-dark text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-white">Email</h4>
-                                    <a href="mailto:svvdmd@gmail.com"
-                                        class="text-gray-400 hover:text-brand-gold text-sm transition">svvdmd@gmail.com</a>
+                                    <h5 class="font-bold text-brand-dark">Email</h5>
+                                    <a href="mailto:svvdmd@gmail.com" class="text-brand-dark/80 text-sm hover:underline">svvdmd@gmail.com</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="w-full lg:w-1/2">
-                        <form class="space-y-4">
-                            <div>
-                                <label
-                                    class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1 block">Your
-                                    Name</label>
-                                <input type="text" class="input-dark rounded" placeholder="John Doe">
+                    <!-- Contact Form -->
+                    <div class="w-full lg:w-7/12 p-10 lg:p-12 bg-brand-surface">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event, 'contactForm')" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-gold uppercase tracking-widest mb-2">Name</label>
+                                    <input type="text" required class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-gold uppercase tracking-widest mb-2">Phone</label>
+                                    <input type="tel" required class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="(555) 123-4567">
+                                </div>
                             </div>
                             <div>
-                                <label
-                                    class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1 block">Phone
-                                    Number</label>
-                                <input type="tel" class="input-dark rounded" placeholder="(555) 123-4567">
+                                <label class="block text-xs font-bold text-brand-gold uppercase tracking-widest mb-2">Message</label>
+                                <textarea rows="4" required class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="I have a collection of silver coins..."></textarea>
                             </div>
-                            <div>
-                                <label
-                                    class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-1 block">Message</label>
-                                <textarea rows="4" class="input-dark rounded"
-                                    placeholder="I have a collection of silver coins..."></textarea>
-                            </div>
-                            <button type="submit" class="btn-gold w-full">Submit Request</button>
+                            <button type="submit" class="btn-primary w-full md:w-auto">
+                                Request Appointment
+                            </button>
+                            <p class="hidden text-green-400 text-sm mt-2" id="contactFormSuccess"><i class="fas fa-check-circle mr-2"></i> Message sent successfully!</p>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark-elegant border-t border-brand-gold-bright/20 text-gray-500 py-16 backdrop-blur-sm">
-        <div class="max-w-container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-                <!-- Brand -->
+    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
                 <div>
-                    <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/logo-0113.webp"
-                        alt="Logo" class="h-16 mb-6 opacity-90 hover:opacity-100 transition-opacity duration-300">
-                    <p class="text-sm mb-6 leading-relaxed">Fairfax Coin and Bullion Exchange. Integrity, value, and
-                        expertise in
-                        numismatics and precious metals.</p>
+                    <h3 class="text-white font-heading font-bold text-lg mb-6">Fairfax Coin</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's trusted partner.
+                    </p>
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="text-gray-400 hover:text-brand-gold-bright text-2xl transition-all duration-300 hover:scale-110">
-                            <i class="fab fa-facebook"></i>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#"
-                            class="text-gray-400 hover:text-brand-gold-bright text-2xl transition-all duration-300 hover:scale-110">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Links -->
+                <!-- Col 2 -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Metals</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-gold transition">Gold Coins</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Silver Bullion</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Platinum</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Scrap Gold</a></li>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Local Services</h4>
+                    <ul class="space-y-3 text-xs text-gray-500">
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Coins in Alexandria, VA</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Coins in Arlington, VA</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Coins in Northern Virginia</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Gold & Silver in Manassas</a></li>
+                        <li><a href="#" class="hover:text-brand-gold transition-colors">Sell Coins in Fairfax</a></li>
                     </ul>
                 </div>
 
-                <!-- Links -->
+                <!-- Col 3 -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Collectibles</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-brand-gold transition">Rare Stamps</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Paper Currency</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Luxury Watches</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition">Estate Jewelry</a></li>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#coins" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
+                        <li><a href="#bullion" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
+                        <li><a href="#jewelry" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
+                        <li><a href="#currency" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
+                        <li><a href="#contact" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
                     </ul>
                 </div>
 
-                <!-- Map -->
+                <!-- Col 4 -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6">Location</h4>
-                    <div
-                        class="w-full h-32 bg-gray-800 rounded overflow-hidden grayscale hover:grayscale-0 transition duration-500">
-                        <iframe
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Location</h4>
+                    <div class="rounded-lg overflow-hidden h-32 opacity-70 hover:opacity-100 transition-opacity border border-white/10">
+                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.029755249088!2d-77.29990052434685!3d38.87756104787477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b6495272b7b853%3A0xb4f4dfa84a2e8792!2s2970%20Palmer%20St%2C%20Oakton%2C%20VA%2022124!5e0!3m2!1sen!2sus!4v1732460206295!5m2!1sen!2sus"
                             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
 
-            <div
-                class="mt-16 pt-8 border-t border-brand-gold-bright/10 text-center text-xs flex flex-col md:flex-row justify-between items-center">
-                <span>© 2025 Fairfax Coin and Bullion Exchange. All rights reserved.</span>
-                <span class="mt-2 md:mt-0">Designed by <a href="#"
-                        class="text-brand-gold-bright hover:underline font-semibold">TopTierPractice</a></span>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2026 Fairfax Coin and Bullion Exchange. All rights reserved. <span class="ml-2">Designed by TopTierPractice.com</span></p>
+                <div class="mt-2 md:mt-0 space-x-4">
+                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-400">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Consult Modal (Dark Theme) -->
-    <div id="consultModal"
-        class="fixed inset-0 bg-black/90 z-[60] hidden flex justify-center items-center backdrop-blur-sm">
-        <div class="bg-brand-card border border-brand-gold/30 rounded-lg shadow-2xl p-8 w-full max-w-md relative mx-4">
-            <button onclick="closeModal()"
-                class="absolute top-4 right-4 text-gray-400 hover:text-brand-gold transition text-2xl">
-                <i class="fas fa-times"></i>
+    <!-- Consult Modal -->
+    <div id="consultModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div class="relative bg-brand-surface border border-brand-gold/20 rounded-xl shadow-2xl w-full max-w-md p-8 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
             </button>
-            <h2 class="text-2xl font-bold text-white text-center mb-2 uppercase font-heading">Consult Experts</h2>
-            <div class="divider-gold"></div>
-            <p class="text-center text-gray-400 mb-6 text-sm">Fill out the form below. We will contact you shortly.</p>
-            <form class="space-y-4">
-                <input type="text" placeholder="Name" class="input-dark rounded">
-                <input type="tel" placeholder="Phone" class="input-dark rounded">
-                <button type="submit" class="btn-gold w-full">Request Call</button>
+
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white font-heading uppercase mb-2">Request Call</h3>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <form id="modalForm" onsubmit="handleFormSubmit(event, 'modalForm')" class="space-y-4">
+                <div>
+                    <input type="text" required class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Name">
+                </div>
+                <div>
+                    <input type="tel" required class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Phone">
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit</button>
+                <p class="hidden text-green-400 text-sm text-center" id="modalFormSuccess"><i class="fas fa-check-circle mr-2"></i> We will contact you shortly!</p>
             </form>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script>
-        // Mobile Menu Logic
+        // --- Navigation & UI Logic ---
+
+        // Sticky Header Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-0', 'bg-brand-dark/95', 'shadow-lg');
+                header.classList.remove('bg-brand-dark/85');
+            } else {
+                header.classList.remove('py-0', 'bg-brand-dark/95', 'shadow-lg');
+                header.classList.add('bg-brand-dark/85');
+            }
+        });
+
+        // Mobile Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const overlay = document.getElementById('mobile-menu-overlay');
-            menu.classList.toggle('open');
-            if (menu.classList.contains('open')) {
-                overlay.classList.remove('hidden');
-            } else {
+            const isOpen = !menu.classList.contains('translate-x-full');
+
+            if (isOpen) {
+                menu.classList.add('translate-x-full');
                 overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            } else {
+                menu.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
             }
         }
-
-        // Slider Logic with Smoother Transitions
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].classList.add('active');
-            setTimeout(showSlides, 4000); // Slower transition for better viewing
-        }
-
-        // Init slider
-        showSlides();
 
         // Modal Logic
         function openModal() {
-            document.getElementById('consultModal').classList.remove('hidden');
+            const modal = document.getElementById('consultModal');
+            modal.classList.remove('hidden');
+            // Reset form state on open
+            document.getElementById('modalFormSuccess').classList.add('hidden');
+            document.getElementById('modalForm').reset();
+            document.body.style.overflow = 'hidden';
         }
+
         function closeModal() {
             document.getElementById('consultModal').classList.add('hidden');
+            document.body.style.overflow = '';
         }
-        // Close modal on outside click
-        document.getElementById('consultModal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
 
-        // Scroll Reveal Animation System
-        const revealElements = document.querySelectorAll('.scroll-reveal');
+        // --- Form Handling (Simulation) ---
+        function handleFormSubmit(e, formId) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+            const successMsg = document.getElementById(formId + 'Success');
 
-        const revealOnScroll = new IntersectionObserver((entries) => {
+            // Simulate Loading
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                successMsg.classList.remove('hidden');
+                e.target.reset();
+
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                    if(formId === 'modalForm') closeModal();
+                }, 3000);
+            }, 1500);
+        }
+
+        // --- Slider Logic ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#hero-slider img');
+
+        function nextSlide() {
+            slides[currentSlide].style.opacity = '0';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = '1';
+        }
+
+        setInterval(nextSlide, 4000);
+
+        // --- Scroll Reveal Animation ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Only animate once
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        }, observerOptions);
 
-        revealElements.forEach(el => {
-            revealOnScroll.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Smooth Scroll for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href.length > 1) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
     </script>
 </body>
-
 </html>
