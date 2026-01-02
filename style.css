@@ -1,0 +1,199 @@
+/* Global Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-header {
+            background: rgba(18, 18, 18, 0.95); /* Slightly darker for better readability */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Premium Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37, #AA8C2C);
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #F3E5AB, #D4AF37);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #D4AF37;
+            border: 1px solid #D4AF37;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: #F3E5AB;
+            border-color: #F3E5AB;
+        }
+
+        /* Text Gradients */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom List Bullets */
+        .list-gold li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+        }
+        .list-gold li::before {
+            content: '\f00c'; /* FontAwesome check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 4px;
+            font-size: 0.8em;
+        }
+
+        /* Input Styles */
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s;
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Dropdown Styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1E1E1E;
+            min-width: 260px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+            z-index: 50;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-item {
+            color: #E0E0E0;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: #D4AF37;
+            padding-left: 20px;
+        }
+
+        /* Desktop Dropdown Hover */
+        .group:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
