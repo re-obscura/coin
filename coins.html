@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coins in Fairfax, VA - Fairfax Coin Exchange</title>
+    <meta name="description" content="We sell and buy coins in Fairfax, VA. Expert appraisals, gold, silver, and collectibles.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Tailwind Configuration (Inlined for standalone preview, but usually in tailwind-config.js) -->
+    <script src="tailwind-config.js"></script>
+</head>
+
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-brand-surface z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col">
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-brand-dark-gray">
+            <span class="font-heading font-bold text-xl text-brand-gold">Menu</span>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-brand-gold transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="flex-1 overflow-y-auto p-6">
+            <ul class="space-y-4 text-lg font-medium">
+                <li><a href="index.html" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+
+                <!-- Mobile Coins Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="coins.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
+                        <button onclick="toggleSubmenu('mobile-coins-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-coins-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                        <li><a href="coins-in-alexandria-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                        <li><a href="coins-in-maryland.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Maryland</a></li>
+                        <li><a href="coins-in-fairfax-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Fairfax, Northern VA</a></li>
+                        <li><a href="coins-in-reston-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Reston, VA</a></li>
+                        <li><a href="coins-in-herndon-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Herndon, VA</a></li>
+                        <li><a href="coins-in-leesburg-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Leesburg, VA</a></li>
+                        <li><a href="coins-in-springfield-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Springfield, VA</a></li>
+                        <li><a href="gold-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold Coins in Fairfax, VA</a></li>
+                        <li><a href="gold-and-silver-coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold &amp; Silver Coins Northern VA</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell Coins in Fairfax, VA</a></li>
+                        <li><a href="sell-coins-near-me.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell coins near me</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="silver.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
+
+                <!-- Mobile Gold Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="gold.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a>
+                        <button onclick="toggleSubmenu('mobile-gold-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-gold-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                         <li><a href="gold-silver-in-manassas-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Manassas, VA</a></li>
+                         <li><a href="gold-silver-in-winchester-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Winchester, VA</a></li>
+                         <li><a href="virginia-gold-and-silver-buyer.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Virginia Gold and Silver Buyer</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="jewelry.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
+                <li><a href="watches.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
+                <li><a href="currency.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
+                <li><a href="stamps.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
+                <li><a href="collectibles.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
+            <button onclick="openModal(); toggleMenu()" class="btn-primary w-full justify-center">
+                Consult Experts
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-30 glass-header transition-all duration-300 py-0 bg-brand-dark/95 shadow-lg" id="main-header">
+        <div class="max-w-full mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <img src="resources/fair-logo.png" onerror="this.src='https://placehold.co/60x60/1a1a1a/D4AF37?text=FC'" alt="Fairfax Coin Logo" class="h-10 w-auto relative z-10">
+                    </div>
+                    <div class="flex flex-col hidden sm:flex">
+                        <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin &amp; Bullion</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden xl:flex items-center gap-5">
+                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
+
+                    <!-- Coins Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Coins <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="coins-in-alexandria-va.html" class="dropdown-item">Coins in Alexandria, VA</a>
+                            <a href="coins-in-arlington-va.html" class="dropdown-item">Coins in Arlington, VA</a>
+                            <a href="coins-in-northern-virginia.html" class="dropdown-item">Coins in Northern Virginia</a>
+                            <a href="coins-in-maryland.html" class="dropdown-item">Coins in Maryland</a>
+                            <a href="coins-in-fairfax-northern-virginia.html" class="dropdown-item">Coins in Fairfax, Northern Virginia</a>
+                            <a href="coins-in-reston-va.html" class="dropdown-item">Coins in Reston, VA</a>
+                            <a href="coins-in-herndon-va.html" class="dropdown-item">Coins in Herndon, VA</a>
+                            <a href="coins-in-leesburg-va.html" class="dropdown-item">Coins in Leesburg, VA</a>
+                            <a href="coins-in-springfield-va.html" class="dropdown-item">Coins in Springfield, VA</a>
+                            <a href="gold-coins-in-fairfax-va.html" class="dropdown-item">Gold Coins in Fairfax, VA</a>
+                            <a href="gold-and-silver-coins-in-northern-virginia.html" class="dropdown-item">Gold and Silver Coins in Northern Virginia</a>
+                            <a href="sell-coins-in-fairfax-va.html" class="dropdown-item">Sell Coins in Fairfax, VA</a>
+                            <a href="sell-coins-near-me.html" class="dropdown-item">Sell coins near me</a>
+                        </div>
+                    </div>
+
+                    <a href="silver.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
+
+                    <!-- Gold Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Gold <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="gold-silver-in-manassas-va.html" class="dropdown-item">Gold, Silver in Manassas, VA</a>
+                            <a href="gold-silver-in-winchester-va.html" class="dropdown-item">Gold, Silver in Winchester, VA</a>
+                            <a href="virginia-gold-and-silver-buyer.html" class="dropdown-item">Virginia Gold and Silver Buyer</a>
+                        </div>
+                    </div>
+
+                    <a href="jewelry.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
+                    <a href="watches.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
+                    <a href="currency.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
+                    <a href="stamps.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Stamps</a>
+                    <a href="collectibles.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
+                    <a href="contact.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
+                </nav>
+
+                <!-- CTA & Hamburger -->
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal()" class="hidden sm:inline-flex btn-primary !py-2 !px-6 !text-xs">
+                        Consult Experts
+                    </button>
+                    <button class="xl:hidden text-white hover:text-brand-gold transition-colors p-2" onclick="toggleMenu()" aria-label="Open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[60vh] flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/top-fon-coin-01.webp" alt="Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/60"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12">
+                <div class="max-w-3xl reveal active">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/30 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                        Fairfax, VA
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        We Sell and Buy <span class="text-gradient-gold">Coins</span> <br> in Fairfax, VA
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        We sell and buy coins in Fairfax, VA with personalized attention and fair pricing. Bring your coins in for appraisal. All verbal appraisals are FREE and do not commit you to a sale.
+                    </p>
+                    <button onclick="openModal()" class="btn-primary">
+                        Consult the experts
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section (Light) -->
+        <section class="py-20 bg-white text-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Coins in Fairfax, VA</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            <strong>Will buy your broken or unwanted gold, silver and platinum necklaces, rings, bracelets, odd earrings – we’ll buy it all!</strong>
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Currently, there are millions of coins of various designs in economic circuits all over the world. One might say that it is difficult to find one’s bearings in the sphere of numismatics without a specialist who buys and sells coins, who, for example, spends several hours a day studying them.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our coin dealers in Fairfax, VA are just that, coin dealers and at <strong>Fairfax Coin and Bullion Exchange</strong> we are proud of our selection and service to our customers. Selling your coins have been made easier and less time consuming since we do all the research for you.
+                        </p>
+                    </div>
+                    <div class="reveal delay-100">
+                        <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-gray-100">
+                            <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/coins-03.webp" alt="Coins Collection" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section (Dark) -->
+        <section class="py-24 bg-brand-dark-gray relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+                <i class="fas fa-quote-left text-4xl text-brand-gold/30 mb-6"></i>
+                <h2 class="text-2xl md:text-3xl font-heading font-medium text-white mb-8 leading-relaxed italic">
+                    "We buy coins in Fairfax, VA, not merely as transactions in the commercial sense, but as an act of preserving rich, intricate tapestries woven from threads of diverse human experiences."
+                </h2>
+                <div class="text-left text-gray-400 space-y-6 text-lg leading-relaxed">
+                    <p>
+                        Each coin we seek out speaks a language of its own, telling tales of empires that rose and fell, of voyagers who traversed uncharted lands, and of merchants who built bridges between civilizations.
+                    </p>
+                    <p>
+                        When we say, “We buy coins,” we are extending an invitation to those who hold fragments of such enthralling narratives. Aged Roman denarii, whispering of gladiatorial arenas and the grandeur of ancient Rome, musty colonial coins, echoing the initial encounters between the Old World and the New, and the polished sovereigns of yore, embodying the enduring legacy of monarchies long gone—these are but glimpses of the treasure trove we pursue.
+                    </p>
+                    <p>
+                        Selling and buying coins in Fairfax, VA is not just a service, but an entire universe that has its own personality with its own traditions. It is an intriguing field that brings together those who have fallen in love with the history of antiquities and creates opportunities for people to further their education and earnings.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventory List (Darker) -->
+        <section class="py-24 bg-brand-dark border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold text-white mb-6 font-heading">What kind of coins do we sell and buy in Fairfax, VA?</h3>
+                        <p class="text-gray-400 mb-6">Fairfax Coin and Bullion Exchange sells and buys uncirculated and slabbed coins, including:</p>
+                        <ul class="list-gold text-gray-300 space-y-3">
+                            <li>US Silver Eagle Coins and Gold Eagle Coins.</li>
+                            <li>International circulated Gold and Silver Coins.</li>
+                            <li>Unc Philharmonic, Pandas, Koalas, Maple Leafs, Krugerrand, Pesos and Cents, and More.</li>
+                            <li>Pre-1965 US Silver coins.</li>
+                            <li>Many other US coins.</li>
+                            <li>Silver proof sets from any country in the world including either proof or uncirculated sets.</li>
+                            <li>PGCS and NGC certified coins.</li>
+                            <li>Antique coins</li>
+                        </ul>
+                    </div>
+                    <div class="reveal delay-100">
+                        <div class="glass-panel p-8 rounded-xl border-l-4 border-brand-gold">
+                            <h4 class="text-xl font-bold text-brand-gold mb-4">Preparation Advice</h4>
+                            <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                                Before contacting Fairfax Coin and Bullion Exchange, you should take a detailed inventory of your coins. Collect all your coins and sort them by type, year of issue, condition and other important characteristics. It is convenient to use catalog sheets or specialized coin inventory programs for this purpose.
+                            </p>
+                            <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                                <strong>Cleaning Warning:</strong> Before you turn in your coins, make sure they are properly cleaned and packaged. However, be careful: not all coins should be cleaned, as this can damage their surface and reduce their value. If you are unsure, keep your coins in their original condition.
+                            </p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                If your coins are stored in placers, sort them by type in bags. Those of you who have already put your coins in a flip, folder, slab or other holder, please bring them in that way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valuable Coins List -->
+        <section class="py-24 bg-brand-surface">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-heading">Valuable Coins in Circulation</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Circulating coins are often an interesting and affordable way to start collecting coins, owners suddenly discover they have an unexpectedly high value.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 reveal">
+                    <!-- Quarters (1932-1964) -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=Quarters+1932-1964" alt="Quarters 1932-1964" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">Quarters (1932-1964)</h4>
+                            <p class="text-white font-bold text-xl">$5 - $60</p>
+                        </div>
+                    </div>
+
+                    <!-- 2005 Kansas State Quarter -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=2005+Kansas+Quarter" alt="2005 Kansas State Quarter" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">2005 Kansas State Quarter</h4>
+                            <p class="text-white font-bold text-xl">$100</p>
+                        </div>
+                    </div>
+
+                    <!-- 2004 Wisconsin Quarter -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=2004+Wisconsin+Leaf" alt="2004 Wisconsin Quarter" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">2004 Wisconsin Quarter (Extra Leaf)</h4>
+                            <p class="text-white font-bold text-xl">$300</p>
+                        </div>
+                    </div>
+
+                    <!-- 1996 Roosevelt Dime -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1996+Roosevelt+Dime" alt="1996 Roosevelt Dime" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1996 Roosevelt Dime</h4>
+                            <p class="text-white font-bold text-xl">$2 - $3</p>
+                        </div>
+                    </div>
+
+                    <!-- 1982 No Mint Mark Dime -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1982+No+Mint+Dime" alt="1982 No Mint Mark Dime" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1982 No Mint Mark Dime</h4>
+                            <p class="text-white font-bold text-xl">$35 - $50</p>
+                        </div>
+                    </div>
+
+                    <!-- 1965 Roosevelt Silver Dime -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1965+Silver+Dime" alt="1965 Roosevelt Silver Dime" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1965 Roosevelt Silver Dime</h4>
+                            <p class="text-white font-bold text-xl">$7,000</p>
+                        </div>
+                    </div>
+
+                    <!-- 1918 Buffalo Nickel -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1918+Buffalo+Nickel" alt="1918 Buffalo Nickel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1918 Buffalo Nickel</h4>
+                            <p class="text-white font-bold text-xl">$125,000</p>
+                        </div>
+                    </div>
+
+                    <!-- 1937 3-leg Buffalo Nickel -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1937+3-Leg+Nickel" alt="1937 3-leg Buffalo Nickel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1937 3-leg Buffalo Nickel</h4>
+                            <p class="text-white font-bold text-xl">$95,000</p>
+                        </div>
+                    </div>
+
+                    <!-- 1969 Penny (Doubled Die) -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1969+Penny+Double+Die" alt="1969 Penny (Doubled Die)" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1969 Penny (Doubled Die)</h4>
+                            <p class="text-white font-bold text-xl">$30,000 - $100,000</p>
+                        </div>
+                    </div>
+
+                     <!-- 1870 Seated Liberty Dollar -->
+                     <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1870+Seated+Liberty" alt="1870 Seated Liberty Dollar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1870 Seated Liberty Dollar</h4>
+                            <p class="text-white font-bold text-xl">$500 - $5,000</p>
+                        </div>
+                    </div>
+
+                    <!-- 1927 Double Eagle -->
+                    <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1927+Double+Eagle" alt="1927 Double Eagle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1927 Double Eagle</h4>
+                            <p class="text-white font-bold text-xl">$1.3 million</p>
+                        </div>
+                    </div>
+
+                     <!-- 1794 Silver Dollar -->
+                     <div class="bg-brand-dark rounded-xl border border-white/5 hover:border-brand-gold/50 transition-all group overflow-hidden hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden bg-brand-dark-gray relative">
+                             <img src="https://placehold.co/400x300/1a1a1a/D4AF37?text=1794+Silver+Dollar" alt="1794 Silver Dollar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold text-lg mb-2">1794 Silver Dollar</h4>
+                            <p class="text-white font-bold text-xl">$10 million</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Prices Table -->
+                <div class="glass-panel rounded-xl overflow-hidden reveal">
+                    <div class="bg-brand-gold/10 p-4 border-b border-brand-gold/20">
+                        <h3 class="text-xl font-bold text-white text-center">Current Market Estimates</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 text-sm">
+                        <!-- Gold -->
+                        <div class="p-6 border-b md:border-b-0 md:border-r border-white/10">
+                            <h4 class="text-brand-gold font-bold mb-4 uppercase tracking-wider">Gold</h4>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between"><span>1oz American Gold Buffalo</span> <span class="font-bold text-white">$2,705.76</span></li>
+                                <li class="flex justify-between"><span>1oz Canadian Gold Maple Leaf</span> <span class="font-bold text-white">$2,649.70</span></li>
+                                <li class="flex justify-between"><span>1oz SA Gold Krugerrand</span> <span class="font-bold text-white">$2,639.70</span></li>
+                                <li class="flex justify-between"><span>1/2oz American Gold Eagle</span> <span class="font-bold text-white">$1,436.23</span></li>
+                                <li class="flex justify-between"><span>1/4oz American Gold Eagle</span> <span class="font-bold text-white">$753.38</span></li>
+                                <li class="flex justify-between"><span>1/10oz American Gold Eagle</span> <span class="font-bold text-white">$312.89</span></li>
+                            </ul>
+                        </div>
+                        <!-- Silver -->
+                        <div class="p-6">
+                            <h4 class="text-brand-gold font-bold mb-4 uppercase tracking-wider">Silver</h4>
+                            <ul class="space-y-3">
+                                <li class="flex justify-between"><span>Morgan Silver Dollar</span> <span class="font-bold text-white">$46.65</span></li>
+                                <li class="flex justify-between"><span>1oz American Silver Eagle</span> <span class="font-bold text-white">$36.32</span></li>
+                                <li class="flex justify-between"><span>1oz Canadian Silver Maple Leaf</span> <span class="font-bold text-white">$34.57</span></li>
+                                <li class="flex justify-between"><span>1oz Generic Silver Bar</span> <span class="font-bold text-white">$34.32</span></li>
+                                <li class="flex justify-between"><span>10oz Generic Silver Bar</span> <span class="font-bold text-white">$333.20</span></li>
+                                <li class="flex justify-between"><span>US 90% Silver (Pre-1965)</span> <span class="font-bold text-white">$24.54</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grading Section (White) -->
+        <section class="py-24 bg-white text-gray-800">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-4 font-heading">How do we grade coins?</h2>
+                    <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 text-center hover:shadow-lg transition-shadow reveal">
+                        <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-search"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Condition</h4>
+                        <p class="text-sm text-gray-600">The degree of wear and tear. Less wear equals higher value.</p>
+                    </div>
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 text-center hover:shadow-lg transition-shadow reveal delay-100">
+                        <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-gem"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Scarcity</h4>
+                        <p class="text-sm text-gray-600">Years and mints that produced fewer coins ("best dates").</p>
+                    </div>
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 text-center hover:shadow-lg transition-shadow reveal delay-200">
+                        <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-atom"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Content</h4>
+                        <p class="text-sm text-gray-600">The material from which the coin is made (Gold, Silver, etc.).</p>
+                    </div>
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 text-center hover:shadow-lg transition-shadow reveal delay-300">
+                        <div class="w-12 h-12 bg-brand-gold text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-chart-line"></i></div>
+                        <h4 class="font-bold text-lg mb-2">Demand</h4>
+                        <p class="text-sm text-gray-600">How popular the specific series is among collectors.</p>
+                    </div>
+                </div>
+
+                <div class="prose max-w-3xl mx-auto text-gray-600 text-center reveal">
+                    <p>
+                        When grading coins in Fairfax, VA, we perform a <strong>Physical Inspection</strong> for wear and scratches, assess minting quality, and perform <strong>Authentication</strong>. After these steps, the coin is given a numerical grade reflecting its overall condition and historical value.
+                    </p>
+                </div>
+             </div>
+        </section>
+
+        <!-- Beginners Guide (Dark Gradient) -->
+        <section class="py-24 bg-gradient-to-b from-brand-dark-gray to-brand-dark border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white mb-10 text-center font-heading">How to Start Buying Coins: A Beginner’s Guide</h2>
+
+                <div class="space-y-8 reveal">
+                    <!-- Steps -->
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold text-brand-dark font-bold flex items-center justify-center">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Define Your Goal</h4>
+                            <p class="text-gray-400 text-sm">Decide if you are collecting for passion (historic coins) or investing for financial growth (bullion like American Eagles).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold text-brand-dark font-bold flex items-center justify-center">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Educate Yourself</h4>
+                            <p class="text-gray-400 text-sm">Understand grading standards (PCGS, NGC) and learn the difference between spot price and premium.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold text-brand-dark font-bold flex items-center justify-center">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Choose a Reputable Source</h4>
+                            <p class="text-gray-400 text-sm">Visit established local dealers like us, or use trusted platforms. Avoid "too good to be true" deals.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-gold text-brand-dark font-bold flex items-center justify-center">4</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Verify Authenticity</h4>
+                            <p class="text-gray-400 text-sm">Purchase coins certified by reputable organizations. Ask for authentication certificates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center reveal">
+                    <p class="text-white text-lg mb-6 italic">"Start small, stay informed, and enjoy the journey of becoming a knowledgeable coin enthusiast!"</p>
+                    <a href="contact.html" class="btn-primary">Start Your Journey</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-brand-gold">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Contact our experts in Fairfax, VA</h2>
+                <p class="text-brand-dark/80 text-lg mb-8 max-w-2xl mx-auto font-medium">
+                    Contact our specialist with any questions you may have. Make an appointment to have your valuables appraised and sold. We offer formal appraisals on coin collections.
+                </p>
+                <div class="flex justify-center gap-4">
+                     <button onclick="openModal()" class="bg-brand-dark text-white font-bold py-3 px-8 rounded hover:bg-black transition-colors">
+                        Make Appointment
+                    </button>
+                    <a href="tel:7037039355" class="border-2 border-brand-dark text-brand-dark font-bold py-3 px-8 rounded hover:bg-brand-dark hover:text-white transition-colors">
+                        (703) 703-9355
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <h3 class="text-white font-heading font-bold text-lg mb-6">Fairfax Coin</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's trusted partner.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Local Services</h4>
+                    <ul class="space-y-3 text-xs text-gray-500">
+                        <li><a href="coins-in-fairfax-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
+                        <li><a href="coins-in-alexandria-va.html" class="hover:text-brand-gold transition-colors">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" class="hover:text-brand-gold transition-colors">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Northern Virginia</a></li>
+                        <li><a href="gold-silver-in-manassas-va.html" class="hover:text-brand-gold transition-colors">Gold & Silver in Manassas</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" class="hover:text-brand-gold transition-colors">Sell Coins in Fairfax</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="coins.html" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
+                        <li><a href="gold.html" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
+                        <li><a href="jewelry.html" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
+                        <li><a href="currency.html" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Contacts</h4>
+                    <p class="text-gray-500 text-sm mb-2">2970 Palmer St Oakton, VA 22124</p>
+                    <p class="text-gray-500 text-sm mb-2">svvdmd@gmail.com</p>
+                    <p class="text-brand-gold text-sm font-bold">(703) 703-9355</p>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>© 2026 Fairfax Coin and Bullion Exchange. Designed by TopTierPractice.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consult Modal -->
+    <div id="consultModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="relative bg-brand-surface border border-brand-gold/20 rounded-xl shadow-2xl w-full max-w-md p-8 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white font-heading uppercase mb-2">Request Call</h3>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <form id="modalForm" onsubmit="handleFormSubmit(event, 'modalForm')" class="space-y-4">
+                <div>
+                    <input type="text" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Name">
+                </div>
+                <div>
+                    <input type="tel" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Phone">
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit</button>
+                <p class="hidden text-green-400 text-sm text-center" id="modalFormSuccess"><i class="fas fa-check-circle mr-2"></i> We will contact you shortly!</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+
+</body>
+</html>

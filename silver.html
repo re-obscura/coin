@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Sell and Buy Silver in Fairfax, VA - Fairfax Coin Exchange</title>
+    <meta name="description" content="We sell and buy silver in Fairfax, VA. Top prices for sterling, bullion, jewelry and scrap silver.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="tailwind-config.js"></script>
+</head>
+
+<body class="antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-brand-surface z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col">
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-brand-dark-gray">
+            <span class="font-heading font-bold text-xl text-brand-gold">Menu</span>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-brand-gold transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="flex-1 overflow-y-auto p-6">
+            <ul class="space-y-4 text-lg font-medium">
+                <li><a href="index.html" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+
+                <!-- Mobile Coins Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="coins.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
+                        <button onclick="toggleSubmenu('mobile-coins-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-coins-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                        <li><a href="coins-in-alexandria-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                        <li><a href="coins-in-maryland.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Maryland</a></li>
+                        <li><a href="coins-in-fairfax-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Fairfax, Northern VA</a></li>
+                        <li><a href="coins-in-reston-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Reston, VA</a></li>
+                        <li><a href="coins-in-herndon-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Herndon, VA</a></li>
+                        <li><a href="coins-in-leesburg-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Leesburg, VA</a></li>
+                        <li><a href="coins-in-springfield-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Springfield, VA</a></li>
+                        <li><a href="gold-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold Coins in Fairfax, VA</a></li>
+                        <li><a href="gold-and-silver-coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold &amp; Silver Coins Northern VA</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell Coins in Fairfax, VA</a></li>
+                        <li><a href="sell-coins-near-me.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell coins near me</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="silver.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
+
+                <!-- Mobile Gold Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="gold.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a>
+                        <button onclick="toggleSubmenu('mobile-gold-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-gold-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                         <li><a href="gold-silver-in-manassas-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Manassas, VA</a></li>
+                         <li><a href="gold-silver-in-winchester-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Winchester, VA</a></li>
+                         <li><a href="virginia-gold-and-silver-buyer.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Virginia Gold and Silver Buyer</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="jewelry.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
+                <li><a href="watches.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
+                <li><a href="currency.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
+                <li><a href="stamps.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
+                <li><a href="collectibles.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
+            <button onclick="openModal(); toggleMenu()" class="btn-primary w-full justify-center">
+                Consult Experts
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-30 glass-header transition-all duration-300 py-0 bg-brand-dark/95 shadow-lg" id="main-header">
+        <div class="max-w-full mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <img src="resources/fair-logo.png" onerror="this.src='https://placehold.co/60x60/1a1a1a/D4AF37?text=FC'" alt="Fairfax Coin Logo" class="h-10 w-auto relative z-10">
+                    </div>
+                    <div class="flex flex-col hidden sm:flex">
+                        <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin &amp; Bullion</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden xl:flex items-center gap-5">
+                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
+
+                    <!-- Coins Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Coins <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="coins-in-alexandria-va.html" class="dropdown-item">Coins in Alexandria, VA</a>
+                            <a href="coins-in-arlington-va.html" class="dropdown-item">Coins in Arlington, VA</a>
+                            <a href="coins-in-northern-virginia.html" class="dropdown-item">Coins in Northern Virginia</a>
+                            <a href="coins-in-maryland.html" class="dropdown-item">Coins in Maryland</a>
+                            <a href="coins-in-fairfax-northern-virginia.html" class="dropdown-item">Coins in Fairfax, Northern Virginia</a>
+                            <a href="coins-in-reston-va.html" class="dropdown-item">Coins in Reston, VA</a>
+                            <a href="coins-in-herndon-va.html" class="dropdown-item">Coins in Herndon, VA</a>
+                            <a href="coins-in-leesburg-va.html" class="dropdown-item">Coins in Leesburg, VA</a>
+                            <a href="coins-in-springfield-va.html" class="dropdown-item">Coins in Springfield, VA</a>
+                            <a href="gold-coins-in-fairfax-va.html" class="dropdown-item">Gold Coins in Fairfax, VA</a>
+                            <a href="gold-and-silver-coins-in-northern-virginia.html" class="dropdown-item">Gold and Silver Coins in Northern Virginia</a>
+                            <a href="sell-coins-in-fairfax-va.html" class="dropdown-item">Sell Coins in Fairfax, VA</a>
+                            <a href="sell-coins-near-me.html" class="dropdown-item">Sell coins near me</a>
+                        </div>
+                    </div>
+
+                    <a href="silver.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
+
+                    <!-- Gold Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Gold <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="gold-silver-in-manassas-va.html" class="dropdown-item">Gold, Silver in Manassas, VA</a>
+                            <a href="gold-silver-in-winchester-va.html" class="dropdown-item">Gold, Silver in Winchester, VA</a>
+                            <a href="virginia-gold-and-silver-buyer.html" class="dropdown-item">Virginia Gold and Silver Buyer</a>
+                        </div>
+                    </div>
+
+                    <a href="jewelry.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
+                    <a href="watches.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
+                    <a href="currency.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
+                    <a href="stamps.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Stamps</a>
+                    <a href="collectibles.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
+                    <a href="contact.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
+                </nav>
+
+                <!-- CTA & Hamburger -->
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal()" class="hidden sm:inline-flex btn-primary !py-2 !px-6 !text-xs">
+                        Consult Experts
+                    </button>
+                    <button class="xl:hidden text-white hover:text-brand-gold transition-colors p-2" onclick="toggleMenu()" aria-label="Open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[60vh] flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <!-- Using a silver-themed placeholder or existing image if available -->
+                <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/silver-450x350.webp" alt="Silver Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/90 to-brand-dark/60"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12">
+                <div class="max-w-3xl reveal active">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-400 bg-gray-500/10 text-gray-300 text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="w-2 h-2 rounded-full bg-gray-300 animate-pulse"></span>
+                        Fairfax, VA
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        We Sell and Buy <span class="text-gray-300">Silver</span> <br> in Fairfax, VA
+                    </h1>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        We sell and buy silver in Fairfax, VA in any volume, from small pieces to bullion, scrap by weight and jewelry pellets.
+                    </p>
+                    <button onclick="openModal()" class="btn-primary">
+                        Consult the experts
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section (Light) -->
+        <section class="py-20 bg-white text-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">We sell and buy silver and sterling in Fairfax, VA</h2>
+                        <div class="bg-gray-100 p-4 border-l-4 border-brand-gold mb-6 rounded-r">
+                            <p class="text-gray-700 font-bold italic">
+                                "Will buy your broken or unwanted gold, silver and platinum necklaces, rings, bracelets, odd earrings – we’ll buy it all!"
+                            </p>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Many times, individuals receive or inherit silver items like coins, bullion, and sterling flatware from their relatives, and are unsure of how to proceed with them. Whether you possess antique jewelry, fine silverware, or bullion, our experienced appraisers will assess your items with the utmost care and precision.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                             Fairfax Coin and Bullion Exchange ensures that every customer feels valued and understood. From the initial consultation to the final offer, we pride ourselves on transparency and fairness every step of the way.
+                        </p>
+                    </div>
+                    <div class="reveal delay-100">
+                         <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-gray-100">
+                            <!-- Placeholder for silver image -->
+                            <img src="https://placehold.co/600x400/e0e0e0/333333?text=Silver+Bullion" alt="Silver Bullion and Coins" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section (Dark) -->
+        <section class="py-24 bg-brand-dark-gray relative overflow-hidden">
+             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h3 class="text-2xl font-heading font-bold text-white mb-6">Our Commitment</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Our commitment goes beyond simply purchasing silver. We understand the sentimental and financial significance attached to each item. That’s why we strive to offer competitive prices that reflect the true value of your items.
+                        </p>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            In Fairfax, VA, we are a beacon for those looking for a reliable and fair place to convert their silver into immediate financial gain.
+                        </p>
+                         <ul class="list-gold text-gray-300 space-y-3">
+                            <li>We sell silver at affordable prices.</li>
+                            <li>You can buy bars, silver jewelry, and flatware from us.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal delay-100 bg-brand-dark p-8 rounded-xl border border-white/5">
+                        <h3 class="text-xl font-bold text-white mb-4">Education & Trust</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                            With years of experience in the precious metals market, we have honed our skills and knowledge to provide not only top-notch appraisals, but also education for our clients.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            We believe that an informed customer is a satisfied customer, and we are always available to explain the appraisal process, market trends, and answer any questions you may have.
+                        </p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Sterling Info (Light Gray) -->
+        <section class="py-20 bg-gray-50 text-gray-800 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <div class="max-w-4xl mx-auto text-center reveal">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-8 font-heading">What is sterling silver?</h2>
+
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-left">
+                        <p class="text-gray-600 mb-4">
+                            <strong>Sterling silver</strong> is an alloy that contains <strong>92.5% silver (925 proof)</strong> and up to 7.5% other metals, most commonly copper.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            Pure 999 silver is too soft to create large pieces, so it is usually combined with copper. This preserves the strength, flexibility and attractiveness of the noble metal. To improve the quality of the alloy, other metals such as germanium, zinc, platinum or titanium are sometimes used, but copper-added alloy remains the standard.
+                        </p>
+                        <hr class="my-6 border-gray-200">
+                        <p class="text-gray-600 italic">
+                            "Sterling silver and regular silver are the same thing. The question about their difference does not make sense, because sterling is ordinary silver. It is this material that is used to create jewelry."
+                        </p>
+                        <p class="text-gray-500 text-sm mt-4">
+                            * The highest grade of silver is 999, but it is not used to make jewelry and cutlery. Pure silver is used in the medical and space industries and is only available as bank bullion.
+                        </p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Inventory List (Dark) -->
+        <section class="py-24 bg-brand-dark border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold text-white mb-6 font-heading">What kind of silver do we sell and buy in Fairfax, VA?</h3>
+                        <p class="text-gray-400 mb-6">The Fairfax Coin and Bullion Exchange is interested in purchasing the following silver products:</p>
+                        <ul class="list-gold text-gray-300 space-y-3">
+                            <li>Pure silver bullion bars.</li>
+                            <li>Sterling silver bars from Franklin Mint and other reputable companies.</li>
+                            <li>Sterling silver flatware and accessories.</li>
+                            <li>Sterling silver coins from USA and other countries.</li>
+                            <li>Sterling Silver Jewelry.</li>
+                            <li>Scrap Silver.</li>
+                        </ul>
+
+                        <div class="mt-8 p-4 bg-brand-gold/10 border border-brand-gold/20 rounded-lg">
+                            <p class="text-brand-gold text-sm font-bold"><i class="fas fa-microscope mr-2"></i> Precision Analysis</p>
+                            <p class="text-gray-400 text-sm mt-1">We use an x-ray fluorescence analyzer to accurately assess the precious metal content of your items.</p>
+                        </div>
+                    </div>
+                    <div class="reveal delay-100">
+                        <div class="glass-panel p-8 rounded-xl border-l-4 border-gray-400">
+                            <h4 class="text-xl font-bold text-white mb-4">Selling Advice</h4>
+                            <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                                We buy silver at the best prices on the market in Fairfax, VA. Bring your silverware to us and get the best deal possible. Whether you are looking to sell old heirlooms, wedding rings, or just looking for a way to make money on unwanted silverware, we are always ready to give you a fair price.
+                            </p>
+                            <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                                <strong>Identification:</strong> Most sterling silver items are usually marked with either the word “sterling” or the 925 mark. Silver plated items are not considered sterling silver and should not be purchased.
+                            </p>
+                            <p class="text-gray-400 text-sm leading-relaxed italic">
+                                Note: Although we buy sterling silver items, we do not buy plated items.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grading Section (White) -->
+        <section class="py-24 bg-white text-gray-800">
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-4 font-heading">How do we grade silver?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Grading silver involves several key steps to ensure the precious metal’s purity, quality, and value are accurately assessed.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <!-- Step 1 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">1</div>
+                        <h4 class="font-bold text-lg mb-2">Physical Inspection</h4>
+                        <p class="text-sm text-gray-600">Verifying color and luster. Pure silver has a bright white appearance with a high degree of reflectiveness.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal delay-100">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">2</div>
+                        <h4 class="font-bold text-lg mb-2">Hallmark Tests</h4>
+                        <p class="text-sm text-gray-600">Examining stamps like ‘925’ (sterling). These are often located in inconspicuous areas like the underside of flatware.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal delay-200">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">3</div>
+                        <h4 class="font-bold text-lg mb-2">Chemical Tests</h4>
+                        <p class="text-sm text-gray-600">Acid testing where a reaction indicates purity. Real silver typically shows a creamy white reaction.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">4</div>
+                        <h4 class="font-bold text-lg mb-2">X-Ray Technology</h4>
+                        <p class="text-sm text-gray-600">Using X-ray fluorescence (XRF) for non-destructive, detailed analysis of the metal’s elemental composition.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal delay-100">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">5</div>
+                        <h4 class="font-bold text-lg mb-2">Craftsmanship</h4>
+                        <p class="text-sm text-gray-600">Assessing design intricacy and workmanship. Handcrafted pieces by renowned artists hold more value.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="p-6 rounded-lg bg-gray-50 border border-gray-200 hover:shadow-lg transition-shadow reveal delay-200">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 font-bold">6</div>
+                        <h4 class="font-bold text-lg mb-2">Provenance</h4>
+                        <p class="text-sm text-gray-600">Items with well-documented histories or significant previous ownership can fetch higher values.</p>
+                    </div>
+                </div>
+
+                <div class="prose max-w-3xl mx-auto text-gray-600 text-center reveal">
+                    <p class="italic">
+                        "In summary, grading silver is a multifaceted process that goes beyond the visual examination. It incorporates hallmark verification, chemical and technological testing, craftsmanship assessment, and provenance research to determine the true quality and value of silver artifacts."
+                    </p>
+                </div>
+             </div>
+        </section>
+
+         <!-- Summary / Bottom Info (Dark Gradient) -->
+        <section class="py-24 bg-gradient-to-b from-brand-dark-gray to-brand-dark border-t border-white/5">
+             <div class="max-w-4xl mx-auto px-4 text-center reveal">
+                <h2 class="text-3xl font-bold text-white mb-6 font-heading">Satisfied Customers & Fair Terms</h2>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    We buy silver in Fairfax, VA with a focus on customer satisfaction and providing the best terms in the market.
+                    Whether you are looking to sell a small amount of silver or a whole lot, our team is ready to offer you favorable terms and a fair price.
+                </p>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+                <p class="text-gray-500">
+                    This comprehensive approach ensures that collectors, jewelers, and investors can accurately gauge the worth of their silver holdings.
+                </p>
+             </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-brand-gold">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Contact our experts in Fairfax, VA</h2>
+                <p class="text-brand-dark/80 text-lg mb-8 max-w-2xl mx-auto font-medium">
+                    Contact our specialist with any questions you may have. Make an appointment to have your valuables appraised and sold. We offer formal appraisals on coin collections when needed, as well as buying the estate outright, whichever fits your needs.
+                </p>
+                <div class="flex justify-center gap-4">
+                     <button onclick="openModal()" class="bg-brand-dark text-white font-bold py-3 px-8 rounded hover:bg-black transition-colors">
+                        Make Appointment
+                    </button>
+                    <a href="tel:7037039355" class="border-2 border-brand-dark text-brand-dark font-bold py-3 px-8 rounded hover:bg-brand-dark hover:text-white transition-colors">
+                        (703) 703-9355
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <h3 class="text-white font-heading font-bold text-lg mb-6">Fairfax Coin</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's trusted partner.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Local Services</h4>
+                    <ul class="space-y-3 text-xs text-gray-500">
+                        <li><a href="coins-in-fairfax-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
+                        <li><a href="coins-in-alexandria-va.html" class="hover:text-brand-gold transition-colors">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" class="hover:text-brand-gold transition-colors">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Northern Virginia</a></li>
+                        <li><a href="gold-silver-in-manassas-va.html" class="hover:text-brand-gold transition-colors">Gold & Silver in Manassas</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" class="hover:text-brand-gold transition-colors">Sell Coins in Fairfax</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="coins.html" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
+                        <li><a href="gold.html" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
+                        <li><a href="jewelry.html" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
+                        <li><a href="currency.html" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Contacts</h4>
+                    <p class="text-gray-500 text-sm mb-2">2970 Palmer St Oakton, VA 22124</p>
+                    <p class="text-gray-500 text-sm mb-2">svvdmd@gmail.com</p>
+                    <p class="text-brand-gold text-sm font-bold">(703) 703-9355</p>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>© 2026 Fairfax Coin and Bullion Exchange. Designed by TopTierPractice.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consult Modal -->
+    <div id="consultModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="relative bg-brand-surface border border-brand-gold/20 rounded-xl shadow-2xl w-full max-w-md p-8 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white font-heading uppercase mb-2">Request Call</h3>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <form id="modalForm" onsubmit="handleFormSubmit(event, 'modalForm')" class="space-y-4">
+                <div>
+                    <input type="text" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Name">
+                </div>
+                <div>
+                    <input type="tel" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Phone">
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit</button>
+                <p class="hidden text-green-400 text-sm text-center" id="modalFormSuccess"><i class="fas fa-check-circle mr-2"></i> We will contact you shortly!</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+
+</body>
+</html>
