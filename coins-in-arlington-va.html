@@ -23,7 +23,7 @@
     <script src="tailwind-config.js"></script>
 </head>
 
-<body class="antialiased selection:bg-brand-gold selection:text-black bg-brand-dark text-gray-300">
+<body class="antialiased selection:bg-brand-gold selection:text-black">
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleMenu()"></div>
@@ -38,28 +38,52 @@
         </div>
         <nav class="flex-1 overflow-y-auto p-6">
             <ul class="space-y-4 text-lg font-medium">
-                <li><a href="index.html" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+                <li><a href="index.html" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+
                 <!-- Mobile Coins Dropdown -->
                 <li>
                     <div class="flex justify-between items-center">
-                        <a href="coins.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
+                        <a href="coins.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
                         <button onclick="toggleSubmenu('mobile-coins-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
                     </div>
                     <ul id="mobile-coins-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
-                        <li><a href="coins-in-fairfax-va.html" class="block text-gray-400 hover:text-white">Coins in Fairfax, VA</a></li>
-                        <li><a href="coins-in-alexandria-va.html" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
-                        <li><a href="coins-in-arlington-va.html" class="block text-brand-gold font-bold">Coins in Arlington, VA</a></li>
-                        <li><a href="coins-in-northern-virginia.html" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                        <li><a href="coins-in-alexandria-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                        <li><a href="coins-in-maryland.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Maryland</a></li>
+                        <li><a href="coins-in-fairfax-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Fairfax, Northern VA</a></li>
+                        <li><a href="coins-in-reston-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Reston, VA</a></li>
+                        <li><a href="coins-in-herndon-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Herndon, VA</a></li>
+                        <li><a href="coins-in-leesburg-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Leesburg, VA</a></li>
+                        <li><a href="coins-in-springfield-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Springfield, VA</a></li>
+                        <li><a href="gold-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold Coins in Fairfax, VA</a></li>
+                        <li><a href="gold-and-silver-coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold &amp; Silver Coins Northern VA</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell Coins in Fairfax, VA</a></li>
+                        <li><a href="sell-coins-near-me.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell coins near me</a></li>
                     </ul>
                 </li>
-                <li><a href="silver.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
-                <li><a href="gold.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a></li>
-                <li><a href="jewelry.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
-                <li><a href="watches.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
-                <li><a href="currency.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
-                <li><a href="stamps.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
-                <li><a href="collectibles.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
-                <li><a href="contact.html" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
+
+                <li><a href="silver.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
+
+                <!-- Mobile Gold Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="gold.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a>
+                        <button onclick="toggleSubmenu('mobile-gold-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-gold-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                         <li><a href="gold-silver-in-manassas-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Manassas, VA</a></li>
+                         <li><a href="gold-silver-in-winchester-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Winchester, VA</a></li>
+                         <li><a href="virginia-gold-and-silver-buyer.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Virginia Gold and Silver Buyer</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="jewelry.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
+                <li><a href="watches.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
+                <li><a href="currency.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
+                <li><a href="stamps.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
+                <li><a href="collectibles.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
             </ul>
         </nav>
         <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
@@ -82,29 +106,50 @@
                     </div>
                     <div class="flex flex-col hidden sm:flex">
                         <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
-                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin & Bullion</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin &amp; Bullion</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <nav class="hidden xl:flex items-center gap-5">
-                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
 
                     <!-- Coins Dropdown -->
                     <div class="relative group py-6">
-                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-brand-gold transition-colors flex items-center gap-1">
+                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
                             Coins <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                         <div class="dropdown-content">
-                            <a href="coins-in-fairfax-va.html" class="dropdown-item">Coins in Fairfax, VA</a>
                             <a href="coins-in-alexandria-va.html" class="dropdown-item">Coins in Alexandria, VA</a>
                             <a href="coins-in-arlington-va.html" class="dropdown-item">Coins in Arlington, VA</a>
                             <a href="coins-in-northern-virginia.html" class="dropdown-item">Coins in Northern Virginia</a>
+                            <a href="coins-in-maryland.html" class="dropdown-item">Coins in Maryland</a>
+                            <a href="coins-in-fairfax-northern-virginia.html" class="dropdown-item">Coins in Fairfax, Northern Virginia</a>
+                            <a href="coins-in-reston-va.html" class="dropdown-item">Coins in Reston, VA</a>
+                            <a href="coins-in-herndon-va.html" class="dropdown-item">Coins in Herndon, VA</a>
+                            <a href="coins-in-leesburg-va.html" class="dropdown-item">Coins in Leesburg, VA</a>
+                            <a href="coins-in-springfield-va.html" class="dropdown-item">Coins in Springfield, VA</a>
+                            <a href="gold-coins-in-fairfax-va.html" class="dropdown-item">Gold Coins in Fairfax, VA</a>
+                            <a href="gold-and-silver-coins-in-northern-virginia.html" class="dropdown-item">Gold and Silver Coins in Northern Virginia</a>
+                            <a href="sell-coins-in-fairfax-va.html" class="dropdown-item">Sell Coins in Fairfax, VA</a>
+                            <a href="sell-coins-near-me.html" class="dropdown-item">Sell coins near me</a>
                         </div>
                     </div>
 
                     <a href="silver.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
-                    <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Gold</a>
+
+                    <!-- Gold Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                            Gold <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="gold-silver-in-manassas-va.html" class="dropdown-item">Gold, Silver in Manassas, VA</a>
+                            <a href="gold-silver-in-winchester-va.html" class="dropdown-item">Gold, Silver in Winchester, VA</a>
+                            <a href="virginia-gold-and-silver-buyer.html" class="dropdown-item">Virginia Gold and Silver Buyer</a>
+                        </div>
+                    </div>
+
                     <a href="jewelry.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
                     <a href="watches.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
                     <a href="currency.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
