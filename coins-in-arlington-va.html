@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Sell and Buy Coins in Arlington, VA - Fairfax Coin Exchange</title>
+    <meta name="description" content="We sell and buy coins in Arlington, VA. Fair valuations for rare, antique, and bullion coins. Expert coin dealer serving Arlington.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="tailwind-config.js"></script>
+</head>
+
+<body class="antialiased selection:bg-brand-gold selection:text-black bg-brand-dark text-gray-300">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-sm transition-opacity duration-300" onclick="toggleMenu()"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-80 h-full bg-brand-surface z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10 flex flex-col">
+        <div class="p-6 border-b border-white/10 flex justify-between items-center bg-brand-dark-gray">
+            <span class="font-heading font-bold text-xl text-brand-gold">Menu</span>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-brand-gold transition-colors">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="flex-1 overflow-y-auto p-6">
+            <ul class="space-y-4 text-lg font-medium">
+                <li><a href="index.html" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+                <!-- Mobile Coins Dropdown -->
+                <li>
+                    <div class="flex justify-between items-center">
+                        <a href="coins.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
+                        <button onclick="toggleSubmenu('mobile-coins-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <ul id="mobile-coins-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
+                        <li><a href="coins-in-fairfax-va.html" class="block text-gray-400 hover:text-white">Coins in Fairfax, VA</a></li>
+                        <li><a href="coins-in-alexandria-va.html" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" class="block text-brand-gold font-bold">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                    </ul>
+                </li>
+                <li><a href="silver.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
+                <li><a href="gold.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a></li>
+                <li><a href="jewelry.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
+                <li><a href="watches.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
+                <li><a href="currency.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
+                <li><a href="stamps.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
+                <li><a href="collectibles.html" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="contact.html" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
+            <button onclick="openModal(); toggleMenu()" class="btn-primary w-full justify-center">
+                Consult Experts
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-30 glass-header transition-all duration-300 py-0 bg-brand-dark/95 shadow-lg" id="main-header">
+        <div class="max-w-full mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <img src="resources/fair-logo.png" onerror="this.src='https://placehold.co/60x60/1a1a1a/D4AF37?text=FC'" alt="Fairfax Coin Logo" class="h-10 w-auto relative z-10">
+                    </div>
+                    <div class="flex flex-col hidden sm:flex">
+                        <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin & Bullion</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden xl:flex items-center gap-5">
+                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+
+                    <!-- Coins Dropdown -->
+                    <div class="relative group py-6">
+                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-brand-gold transition-colors flex items-center gap-1">
+                            Coins <i class="fas fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="coins-in-fairfax-va.html" class="dropdown-item">Coins in Fairfax, VA</a>
+                            <a href="coins-in-alexandria-va.html" class="dropdown-item">Coins in Alexandria, VA</a>
+                            <a href="coins-in-arlington-va.html" class="dropdown-item">Coins in Arlington, VA</a>
+                            <a href="coins-in-northern-virginia.html" class="dropdown-item">Coins in Northern Virginia</a>
+                        </div>
+                    </div>
+
+                    <a href="silver.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
+                    <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Gold</a>
+                    <a href="jewelry.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
+                    <a href="watches.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
+                    <a href="currency.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
+                    <a href="stamps.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Stamps</a>
+                    <a href="collectibles.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
+                    <a href="contact.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
+                </nav>
+
+                <!-- CTA & Hamburger -->
+                <div class="flex items-center gap-4">
+                    <button onclick="openModal()" class="hidden sm:inline-flex btn-primary !py-2 !px-6 !text-xs">
+                        Consult Experts
+                    </button>
+                    <button class="xl:hidden text-white hover:text-brand-gold transition-colors p-2" onclick="toggleMenu()" aria-label="Open menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-[60vh] flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/top-fon-coin-01.webp" alt="Arlington Coins Background" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/60"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12">
+                <div class="max-w-3xl reveal active">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-gold/50 bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-widest mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                        Arlington, VA
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                        We Sell and Buy <span class="text-gradient-gold">Coins</span> <br> in Arlington, VA
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        We sell and buy coins in Arlington, VA and provide fair valuations and competitive bids. We offer a wide range of rare and valuable coins that will pique your interest and add to your collection.
+                    </p>
+                    <button onclick="openModal()" class="btn-primary">
+                        Consult the experts
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section (Light) -->
+        <section class="py-20 bg-white text-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Sell and Buy Coins in Arlington, VA</h2>
+                        <div class="bg-brand-gold/10 p-4 border-l-4 border-brand-gold mb-6 rounded-r">
+                            <p class="text-brand-dark font-bold italic">
+                                "Are you looking to sell or buy coins in Arlington? We have extensive knowledge of the coin market and are committed to helping you."
+                            </p>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            We sell coins from a variety of eras and regions, offering something unique to every collector. If you are looking to sell coins, we provide fair valuations and competitive offers, pricing each coin based on its history and significance.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                             The popularity of numismatics in Arlington, VA is due to the possibility of long-term investment. Many people recognize that rare and antique coins can increase in value significantly. We buy coins with many factors in mind and will give your collections a fair valuation.
+                        </p>
+                    </div>
+                    <div class="reveal delay-100">
+                         <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-brand-gold/20">
+                            <!-- Placeholder image for Arlington Coins -->
+                            <img src="https://placehold.co/600x400/1a1a1a/D4AF37?text=Coins+in+Arlington" alt="Coins in Arlington VA" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Context & Philosophy (Dark) -->
+        <section class="py-24 bg-brand-dark-gray relative overflow-hidden">
+             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+                 <div class="text-center mb-12 reveal">
+                     <h2 class="text-3xl font-heading font-bold text-white mb-6">A Unique Character and Traditions</h2>
+                     <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        Buying and selling coins in Arlington, VA is not just a transaction, but a whole world with a unique character and its own traditions. It is a fascinating activity that brings together people who are in love with the history and beauty of antique objects.
+                     </p>
+                 </div>
+
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                     <div class="glass-panel p-6 rounded-xl reveal">
+                         <h4 class="text-brand-gold font-bold text-lg mb-3">Historical American Coins</h4>
+                         <p class="text-sm text-gray-300">We buy and sell rare pennies, such as the famous 1909 Abraham Lincoln penny, as well as nickels and dimes that have come to symbolize the last century. Great investment as their value increases over time.</p>
+                     </div>
+                     <div class="glass-panel p-6 rounded-xl reveal delay-100">
+                         <h4 class="text-brand-gold font-bold text-lg mb-3">International Rarities</h4>
+                         <p class="text-sm text-gray-300">Coins from Europe, such as British sovereigns and German marks, are popular, as well as Asian exotics including Chinese yuan and Japanese yen. Each coin tells a different story and transports the owner to a different time.</p>
+                     </div>
+                     <div class="glass-panel p-6 rounded-xl reveal delay-200">
+                         <h4 class="text-brand-gold font-bold text-lg mb-3">Gold & Silver</h4>
+                         <p class="text-sm text-gray-300">Gold American Eagles and silver Maple Leafs from Canada are an integral part of transactions in Arlington. Valued for their noble metal, artistic execution, and limited mintages.</p>
+                     </div>
+                     <div class="glass-panel p-6 rounded-xl reveal delay-300">
+                         <h4 class="text-brand-gold font-bold text-lg mb-3">Unusual & Commemorative</h4>
+                         <p class="text-sm text-gray-300">Coins issued in honor of important historical events or notable individuals are in steady demand and become gems in any collection.</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Inventory List (Dark Gradient) -->
+        <section class="py-24 bg-brand-dark border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="reveal">
+                        <h3 class="text-3xl font-bold text-white mb-6 font-heading">What kind of coins do we sell and buy in Arlington, VA?</h3>
+                        <p class="text-gray-400 mb-6">We sell and buy coins in Arlington, VA that you may be interested in:</p>
+                        <ul class="list-gold text-gray-300 space-y-3">
+                            <li>U.S. silver coins through 1965.</li>
+                            <li>U.S. Silver Eagle and Gold Eagle coins.</li>
+                            <li>Silver proof coin sets of any country, including proof and uncirculated.</li>
+                            <li>Various other US coins.</li>
+                            <li>PGCS and NGC certified coins.</li>
+                            <li>Circulating international gold and silver coins.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal delay-100">
+                        <div class="bg-brand-gold/5 p-8 rounded-xl border border-brand-gold/10">
+                            <h4 class="text-xl font-bold text-white mb-4">Diversity in Arlington</h4>
+                            <p class="text-gray-400 mb-4 text-sm leading-relaxed">
+                                In Arlington, VA, the diversity of the coin world offers collectors and investors many opportunities. As a center of history and culture, this city offers a wide variety of rare and valuable coins that resonate with connoisseurs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grading Section (White) -->
+        <section class="py-24 bg-white text-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-4 font-heading">How do we grade coins in Arlington, VA?</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Coin grading is a thorough process. The purpose is to determine the condition and assign a numerical value from 1 to 70 on the Sheldon Scale.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <!-- Step 1 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">1</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">History & Context</h4>
+                         <p class="text-sm text-gray-600">Thorough research to understand provenance, minting process, and historical significance.</p>
+                     </div>
+                     <!-- Step 2 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">2</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Physical Evaluation</h4>
+                         <p class="text-sm text-gray-600">Gentle cleaning with distilled water only. Aggressive chemicals should never be used.</p>
+                     </div>
+                     <!-- Step 3 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-200">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">3</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Lighting & Magnification</h4>
+                         <p class="text-sm text-gray-600">Using LED ring lights and 5x-10x loupes to reveal fine details like mint marks.</p>
+                     </div>
+                     <!-- Step 4 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-300">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">4</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Surface Preservation</h4>
+                         <p class="text-sm text-gray-600">Inspecting for wear, scratches, and original luster. Minute details significantly affect the grade.</p>
+                     </div>
+                     <!-- Step 5 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">5</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Mint Quality</h4>
+                         <p class="text-sm text-gray-600">Assessing how well the design details were conveyed. Crisp strokes receive higher grades.</p>
+                     </div>
+                     <!-- Step 6 -->
+                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
+                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">6</div>
+                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Authentication</h4>
+                         <p class="text-sm text-gray-600">Verifying authenticity via spectral analysis or databases to identify fakes.</p>
+                     </div>
+                </div>
+
+                <div class="mt-12 text-center text-gray-600 italic reveal">
+                    "Coin grading in Arlington, VA requires not only technical skills, but also a passion for history and detail."
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-brand-gold">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Contact our experts in Arlington, VA</h2>
+                <p class="text-brand-dark/80 text-lg mb-8 max-w-2xl mx-auto font-medium">
+                    Contact our specialist with any questions you may have. Make an appointment to have your valuables appraised and sold. We offer formal appraisals on coin collections when needed, as well as buying the estate outright, whichever fits your needs.
+                </p>
+                <div class="flex justify-center gap-4">
+                     <button onclick="openModal()" class="bg-brand-dark text-white font-bold py-3 px-8 rounded hover:bg-black transition-colors">
+                        Make Appointment
+                    </button>
+                    <a href="tel:7037039355" class="border-2 border-brand-dark text-brand-dark font-bold py-3 px-8 rounded hover:bg-brand-dark hover:text-white transition-colors">
+                        (703) 703-9355
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Col 1 -->
+                <div>
+                    <h3 class="text-white font-heading font-bold text-lg mb-6">Fairfax Coin</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's trusted partner.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Local Services</h4>
+                    <ul class="space-y-3 text-xs text-gray-500">
+                        <li><a href="coins-in-fairfax-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
+                        <li><a href="coins-in-alexandria-va.html" class="hover:text-brand-gold transition-colors">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va.html" class="hover:text-brand-gold transition-colors">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Northern Virginia</a></li>
+                        <li><a href="gold-silver-in-manassas-va.html" class="hover:text-brand-gold transition-colors">Gold & Silver in Manassas</a></li>
+                        <li><a href="sell-coins-in-fairfax-va.html" class="hover:text-brand-gold transition-colors">Sell Coins in Fairfax</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="coins.html" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
+                        <li><a href="gold.html" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
+                        <li><a href="jewelry.html" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
+                        <li><a href="currency.html" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Contacts</h4>
+                    <p class="text-gray-500 text-sm mb-2">2970 Palmer St Oakton, VA 22124</p>
+                    <p class="text-gray-500 text-sm mb-2">svvdmd@gmail.com</p>
+                    <p class="text-brand-gold text-sm font-bold">(703) 703-9355</p>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>© 2026 Fairfax Coin and Bullion Exchange. Designed by TopTierPractice.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Consult Modal -->
+    <div id="consultModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+        <div class="relative bg-brand-surface border border-brand-gold/20 rounded-xl shadow-2xl w-full max-w-md p-8 transform transition-all scale-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white font-heading uppercase mb-2">Request Call</h3>
+                <div class="w-12 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <form id="modalForm" onsubmit="handleFormSubmit(event, 'modalForm')" class="space-y-4">
+                <div>
+                    <input type="text" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Name">
+                </div>
+                <div>
+                    <input type="tel" required="" class="input-field w-full p-3 rounded bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold outline-none" placeholder="Your Phone">
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit</button>
+                <p class="hidden text-green-400 text-sm text-center" id="modalFormSuccess"><i class="fas fa-check-circle mr-2"></i> We will contact you shortly!</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+
+</body>
+</html>
