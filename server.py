@@ -152,6 +152,19 @@ class CMSHandler(http.server.SimpleHTTPRequestHandler):
                 self.serve_file_content(filename)
                 return
 
+        # Clean URL support: Try adding .html if file not found
+        safe_path = self.get_safe_path(self.path)
+        if not safe_path or not os.path.exists(safe_path):
+             if self.path.endswith('/'):
+                 # Directory index is handled by super().do_GET() or we can force it
+                 pass
+             else:
+                 # Try appending .html
+                 html_path = self.path + '.html'
+                 safe_html = self.get_safe_path(html_path)
+                 if safe_html and os.path.exists(safe_html):
+                     self.path = html_path
+
         super().do_GET()
 
     def do_POST(self):

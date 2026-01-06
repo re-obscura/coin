@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
+<html lang="en-US"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We Sell and Buy Coins in Northern Virginia - Fairfax Coin Exchange</title>
@@ -9,10 +7,40 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script><script>
+                document.addEventListener('mouseover', e=>{
+                    if(e.target.tagName==='IMG') {
+                        e.target.style.outline='3px solid #0d6efd';
+                        e.target.style.cursor='pointer';
+                    }
+                });
+                document.addEventListener('mouseout', e=>{
+                    if(e.target.tagName==='IMG') e.target.style.outline='';
+                });
+                document.addEventListener('click', e=>{
+                    if(e.target.tagName==='IMG'){
+                        e.preventDefault(); e.stopPropagation();
+                        // Store ref to image using a unique ID approach or just pass message to parent
+                        // Simple: Pass message, parent opens modal, parent sends message back.
+                        // We need to know WHICH image. Let's add a temp ID.
+                        let tmpId = 'img-edit-' + Math.random().toString(36).substr(2,9);
+                        e.target.setAttribute('data-cms-id', tmpId);
+                        window.parent.postMessage({action:'edit_image', src: e.target.getAttribute('src'), id: tmpId}, '*');
+                    }
+                }, true);
+                window.addEventListener('message', e=>{
+                    if(e.data.action==='update_image'){
+                        let img = document.querySelector('img[data-cms-id="'+e.data.id+'"]');
+                        if(img) {
+                            img.src = e.data.src;
+                            img.removeAttribute('data-cms-id'); // cleanup
+                        }
+                    }
+                });
+            </script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,7 +49,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script src="tailwind-config.js"></script>
-</head>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Open Sans", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.right-0{right:0px}.right-4{right:1rem}.top-0{top:0px}.top-4{top:1rem}.bottom-0{bottom:0px}.left-0{left:0px}.z-0{z-index:0}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.z-\[60\]{z-index:60}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-0{margin-left:0px}.ml-2{margin-left:0.5rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-full{height:100%}.min-h-\[60vh\]{min-height:60vh}.w-10{width:2.5rem}.w-12{width:3rem}.w-2{width:0.5rem}.w-80{width:20rem}.w-auto{width:auto}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-full{max-width:100%}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-12{gap:3rem}.gap-16{gap:4rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-r{border-top-right-radius:0.25rem;border-bottom-right-radius:0.25rem}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-brand-dark{--tw-border-opacity:1;border-color:rgb(18 18 18 / var(--tw-border-opacity, 1))}.border-brand-gold{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.border-brand-gold\/10{border-color:rgb(212 175 55 / 0.1)}.border-brand-gold\/20{border-color:rgb(212 175 55 / 0.2)}.border-brand-gold\/50{border-color:rgb(212 175 55 / 0.5)}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.bg-\[\#0a0a0a\]{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-black\/90{background-color:rgb(0 0 0 / 0.9)}.bg-brand-dark{--tw-bg-opacity:1;background-color:rgb(18 18 18 / var(--tw-bg-opacity, 1))}.bg-brand-dark-gray{--tw-bg-opacity:1;background-color:rgb(30 30 30 / var(--tw-bg-opacity, 1))}.bg-brand-dark\/95{background-color:rgb(18 18 18 / 0.95)}.bg-brand-gold{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.bg-brand-gold\/10{background-color:rgb(212 175 55 / 0.1)}.bg-brand-gold\/5{background-color:rgb(212 175 55 / 0.05)}.bg-brand-surface{--tw-bg-opacity:1;background-color:rgb(37 37 37 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-brand-dark\/85{background-color:rgb(18 18 18 / 0.85)}.bg-\[url\(\'https\:\/\/www\.transparenttextures\.com\/patterns\/cubes\.png\'\)\]{background-image:url('https://www.transparenttextures.com/patterns/cubes.png')}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-brand-dark{--tw-gradient-from:#121212 var(--tw-gradient-from-position);--tw-gradient-to:rgb(18 18 18 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-brand-dark\/95{--tw-gradient-to:rgb(18 18 18 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(18 18 18 / 0.95) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-brand-dark\/60{--tw-gradient-to:rgb(18 18 18 / 0.6) var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.\!px-6{padding-left:1.5rem !important;padding-right:1.5rem !important}.\!py-2{padding-top:0.5rem !important;padding-bottom:0.5rem !important}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0{padding-top:0px;padding-bottom:0px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-4{padding-left:1rem}.pt-16{padding-top:4rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-heading{font-family:"Montserrat", sans-serif}.\!text-xs{font-size:0.75rem !important;line-height:1rem !important}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-brand-dark{--tw-text-opacity:1;color:rgb(18 18 18 / var(--tw-text-opacity, 1))}.text-brand-dark\/80{color:rgb(18 18 18 / 0.8)}.text-brand-gold{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-gray-500::placeholder{--tw-placeholder-opacity:1;color:rgb(107 114 128 / var(--tw-placeholder-opacity, 1))}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur{--tw-blur:blur(8px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.delay-100{transition-delay:100ms}.delay-200{transition-delay:200ms}.delay-300{transition-delay:300ms}.duration-300{transition-duration:300ms}.ease-in-out{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1)}.selection\:bg-brand-gold *::selection{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.selection\:text-black *::selection{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.selection\:bg-brand-gold::selection{--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.selection\:text-black::selection{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.after\:absolute::after{content:var(--tw-content);position:absolute}.after\:-bottom-2::after{content:var(--tw-content);bottom:-0.5rem}.after\:left-0::after{content:var(--tw-content);left:0px}.after\:h-0\.5::after{content:var(--tw-content);height:0.125rem}.after\:w-0::after{content:var(--tw-content);width:0px}.after\:bg-brand-gold::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(212 175 55 / var(--tw-bg-opacity, 1))}.after\:transition-all::after{content:var(--tw-content);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.after\:content-\[\'\'\]::after{--tw-content:'';content:var(--tw-content)}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.hover\:bg-brand-dark:hover{--tw-bg-opacity:1;background-color:rgb(18 18 18 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-brand-gold:hover{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:after\:w-full:hover::after{content:var(--tw-content);width:100%}.focus\:border-brand-gold:focus{--tw-border-opacity:1;border-color:rgb(212 175 55 / var(--tw-border-opacity, 1))}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-brand-gold:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(212 175 55 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:text-brand-gold-light{--tw-text-opacity:1;color:rgb(243 229 171 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-40{opacity:0.4}@media (min-width: 640px){.sm\:ml-4{margin-left:1rem}.sm\:mt-0{margin-top:0px}.sm\:flex{display:flex}.sm\:inline-flex{display:inline-flex}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 768px){.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-left{text-align:left}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1280px){.xl\:flex{display:flex}.xl\:hidden{display:none}}</style></head>
 
 <body class="antialiased selection:bg-brand-gold selection:text-black">
 
@@ -38,52 +66,53 @@
         </div>
         <nav class="flex-1 overflow-y-auto p-6">
             <ul class="space-y-4 text-lg font-medium">
-                <li><a href="index.html" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
+                <li><a href="index" onclick="toggleMenu()" class="block text-white hover:text-brand-gold transition-colors">Home</a></li>
 
                 <!-- Mobile Coins Dropdown -->
                 <li>
                     <div class="flex justify-between items-center">
-                        <a href="coins.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
+                        <a href="coins" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Coins</a>
                         <button onclick="toggleSubmenu('mobile-coins-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
                     </div>
                     <ul id="mobile-coins-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
-                        <li><a href="coins-in-alexandria-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
-                        <li><a href="coins-in-arlington-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Arlington, VA</a></li>
-                        <li><a href="coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
-                        <li><a href="coins-in-maryland.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Maryland</a></li>
-                        <li><a href="coins-in-fairfax-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Fairfax, Northern VA</a></li>
-                        <li><a href="coins-in-reston-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Reston, VA</a></li>
-                        <li><a href="coins-in-herndon-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Herndon, VA</a></li>
-                        <li><a href="coins-in-leesburg-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Leesburg, VA</a></li>
-                        <li><a href="coins-in-springfield-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Springfield, VA</a></li>
-                        <li><a href="gold-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold Coins in Fairfax, VA</a></li>
-                        <li><a href="gold-and-silver-coins-in-northern-virginia.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold &amp; Silver Coins Northern VA</a></li>
-                        <li><a href="sell-coins-in-fairfax-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell Coins in Fairfax, VA</a></li>
-                        <li><a href="sell-coins-near-me.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell coins near me</a></li>
+                        <li><a href="coins-in-alexandria-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Northern Virginia</a></li>
+                        <li><a href="coins-in-maryland" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Maryland</a></li>
+                        <li><a href="coins-in-fairfax-northern-virginia" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Fairfax, Northern VA</a></li>
+                        <li><a href="coins-in-reston-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Reston, VA</a></li>
+                        <li><a href="coins-in-herndon-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Herndon, VA</a></li>
+                        <li><a href="coins-in-leesburg-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Leesburg, VA</a></li>
+                        <li><a href="coins-in-springfield-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Coins in Springfield, VA</a></li>
+                        <li><a href="gold-coins-in-fairfax-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold Coins in Fairfax, VA</a></li>
+                        <li><a href="gold-and-silver-coins-in-northern-virginia" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold &amp; Silver Coins Northern VA</a>
+                        </li>
+                        <li><a href="sell-coins-in-fairfax-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell Coins in Fairfax, VA</a></li>
+                        <li><a href="sell-coins-near-me" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Sell coins near me</a></li>
                     </ul>
                 </li>
 
-                <li><a href="silver.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
+                <li><a href="silver" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Silver</a></li>
 
                 <!-- Mobile Gold Dropdown -->
                 <li>
                     <div class="flex justify-between items-center">
-                        <a href="gold.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a>
+                        <a href="gold" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Gold</a>
                         <button onclick="toggleSubmenu('mobile-gold-submenu')" class="text-brand-gold px-2 py-1"><i class="fas fa-plus"></i></button>
                     </div>
                     <ul id="mobile-gold-submenu" class="hidden pl-4 mt-2 space-y-2 text-sm border-l border-white/10 ml-2">
-                         <li><a href="gold-silver-in-manassas-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Manassas, VA</a></li>
-                         <li><a href="gold-silver-in-winchester-va.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Winchester, VA</a></li>
-                         <li><a href="virginia-gold-and-silver-buyer.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Virginia Gold and Silver Buyer</a></li>
+                        <li><a href="gold-silver-in-manassas-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Manassas, VA</a></li>
+                        <li><a href="gold-silver-in-winchester-va" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Gold, Silver in Winchester, VA</a></li>
+                        <li><a href="virginia-gold-and-silver-buyer" onclick="toggleMenu()" class="block text-gray-400 hover:text-white">Virginia Gold and Silver Buyer</a></li>
                     </ul>
                 </li>
 
-                <li><a href="jewelry.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
-                <li><a href="watches.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
-                <li><a href="currency.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
-                <li><a href="stamps.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
-                <li><a href="collectibles.html" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
-                <li><a href="contact.html" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
+                <li><a href="jewelry" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Jewelry</a></li>
+                <li><a href="watches" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Watches</a></li>
+                <li><a href="currency" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Currency</a></li>
+                <li><a href="stamps" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Stamps</a></li>
+                <li><a href="collectibles" onclick="toggleMenu()" class="block text-gray-400 hover:text-brand-gold transition-colors">Collectibles</a></li>
+                <li><a href="contact" onclick="toggleMenu()" class="block text-brand-gold hover:text-white transition-colors font-bold">Contacts</a></li>
             </ul>
         </nav>
         <div class="p-6 border-t border-white/10 bg-brand-dark-gray">
@@ -99,63 +128,69 @@
             <div class="flex justify-between items-center h-20">
 
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-3 group flex-shrink-0">
+                <a href="index" class="flex items-center gap-3 group flex-shrink-0">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="absolute inset-0 bg-brand-gold blur opacity-20 group-hover:opacity-40 transition-opacity">
+                        </div>
                         <img src="resources/fair-logo.png" onerror="this.src='https://placehold.co/60x60/1a1a1a/D4AF37?text=FC'" alt="Fairfax Coin Logo" class="h-10 w-auto relative z-10">
                     </div>
                     <div class="flex flex-col hidden sm:flex">
                         <span class="text-brand-gold font-heading font-bold text-lg leading-none tracking-wide group-hover:text-brand-gold-light transition-colors">FAIRFAX</span>
-                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin &amp; Bullion</span>
+                        <span class="text-gray-400 text-[10px] font-bold tracking-[0.2em] uppercase mt-1">Coin &amp;
+                            Bullion</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <nav class="hidden xl:flex items-center gap-5">
-                    <a href="index.html" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
+                    <a href="index" class="text-xs font-bold uppercase tracking-wider text-white hover:text-brand-gold transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-brand-gold after:transition-all hover:after:w-full">Home</a>
 
                     <!-- Coins Dropdown -->
                     <div class="relative group py-6">
-                        <a href="coins.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                        <a href="coins" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
                             Coins <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                         <div class="dropdown-content">
-                            <a href="coins-in-alexandria-va.html" class="dropdown-item">Coins in Alexandria, VA</a>
-                            <a href="coins-in-arlington-va.html" class="dropdown-item">Coins in Arlington, VA</a>
-                            <a href="coins-in-northern-virginia.html" class="dropdown-item">Coins in Northern Virginia</a>
-                            <a href="coins-in-maryland.html" class="dropdown-item">Coins in Maryland</a>
-                            <a href="coins-in-fairfax-northern-virginia.html" class="dropdown-item">Coins in Fairfax, Northern Virginia</a>
-                            <a href="coins-in-reston-va.html" class="dropdown-item">Coins in Reston, VA</a>
-                            <a href="coins-in-herndon-va.html" class="dropdown-item">Coins in Herndon, VA</a>
-                            <a href="coins-in-leesburg-va.html" class="dropdown-item">Coins in Leesburg, VA</a>
-                            <a href="coins-in-springfield-va.html" class="dropdown-item">Coins in Springfield, VA</a>
-                            <a href="gold-coins-in-fairfax-va.html" class="dropdown-item">Gold Coins in Fairfax, VA</a>
-                            <a href="gold-and-silver-coins-in-northern-virginia.html" class="dropdown-item">Gold and Silver Coins in Northern Virginia</a>
-                            <a href="sell-coins-in-fairfax-va.html" class="dropdown-item">Sell Coins in Fairfax, VA</a>
-                            <a href="sell-coins-near-me.html" class="dropdown-item">Sell coins near me</a>
+                            <a href="coins-in-alexandria-va" class="dropdown-item">Coins in Alexandria, VA</a>
+                            <a href="coins-in-arlington-va" class="dropdown-item">Coins in Arlington, VA</a>
+                            <a href="coins-in-northern-virginia" class="dropdown-item">Coins in Northern Virginia</a>
+                            <a href="coins-in-maryland" class="dropdown-item">Coins in Maryland</a>
+                            <a href="coins-in-fairfax-northern-virginia" class="dropdown-item">Coins in Fairfax,
+                                Northern Virginia</a>
+                            <a href="coins-in-reston-va" class="dropdown-item">Coins in Reston, VA</a>
+                            <a href="coins-in-herndon-va" class="dropdown-item">Coins in Herndon, VA</a>
+                            <a href="coins-in-leesburg-va" class="dropdown-item">Coins in Leesburg, VA</a>
+                            <a href="coins-in-springfield-va" class="dropdown-item">Coins in Springfield, VA</a>
+                            <a href="gold-coins-in-fairfax-va" class="dropdown-item">Gold Coins in Fairfax, VA</a>
+                            <a href="gold-and-silver-coins-in-northern-virginia" class="dropdown-item">Gold and Silver
+                                Coins in Northern Virginia</a>
+                            <a href="sell-coins-in-fairfax-va" class="dropdown-item">Sell Coins in Fairfax, VA</a>
+                            <a href="sell-coins-near-me" class="dropdown-item">Sell coins near me</a>
                         </div>
                     </div>
 
-                    <a href="silver.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
+                    <a href="silver" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Silver</a>
 
                     <!-- Gold Dropdown -->
                     <div class="relative group py-6">
-                        <a href="gold.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
+                        <a href="gold" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors flex items-center gap-1">
                             Gold <i class="fas fa-chevron-down text-[10px]"></i>
                         </a>
                         <div class="dropdown-content">
-                            <a href="gold-silver-in-manassas-va.html" class="dropdown-item">Gold, Silver in Manassas, VA</a>
-                            <a href="gold-silver-in-winchester-va.html" class="dropdown-item">Gold, Silver in Winchester, VA</a>
-                            <a href="virginia-gold-and-silver-buyer.html" class="dropdown-item">Virginia Gold and Silver Buyer</a>
+                            <a href="gold-silver-in-manassas-va" class="dropdown-item">Gold, Silver in Manassas, VA</a>
+                            <a href="gold-silver-in-winchester-va" class="dropdown-item">Gold, Silver in Winchester,
+                                VA</a>
+                            <a href="virginia-gold-and-silver-buyer" class="dropdown-item">Virginia Gold and Silver
+                                Buyer</a>
                         </div>
                     </div>
 
-                    <a href="jewelry.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
-                    <a href="watches.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
-                    <a href="currency.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
-                    <a href="stamps.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Stamps</a>
-                    <a href="collectibles.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
-                    <a href="contact.html" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
+                    <a href="jewelry" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Jewelry</a>
+                    <a href="watches" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Watches</a>
+                    <a href="currency" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Currency</a>
+                    <a href="stamps" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Stamps</a>
+                    <a href="collectibles" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Collectibles</a>
+                    <a href="contact" class="text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-brand-gold transition-colors">Contacts</a>
                 </nav>
 
                 <!-- CTA & Hamburger -->
@@ -163,6 +198,9 @@
                     <button onclick="openModal()" class="hidden sm:inline-flex btn-primary !py-2 !px-6 !text-xs">
                         Consult Experts
                     </button>
+                    <a href="tel:7037039355" class="hidden sm:inline-flex btn-outline !py-2 !px-6 !text-xs ml-2">
+                        <i class="fas fa-phone-alt mr-2"></i> (703) 703-9355
+                    </a>
                     <button class="xl:hidden text-white hover:text-brand-gold transition-colors p-2" onclick="toggleMenu()" aria-label="Open menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -177,7 +215,7 @@
         <!-- Hero Section -->
         <section class="relative min-h-[60vh] flex items-center pt-20 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="https://fairfaxcoinandbullionexchange.com/wp-content/uploads/2024/10/top-fon-coin-01.webp" alt="Northern Virginia Coins Background" class="w-full h-full object-cover">
+                <img src="resources/top-fon-Buy-sell-coins-Alexandria.webp" alt="Northern Virginia Coins Background" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/60"></div>
             </div>
 
@@ -191,11 +229,15 @@
                         We Sell and Buy <span class="text-gradient-gold">Coins</span> <br> in Northern Virginia
                     </h1>
                     <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-                        We sell and buy coins in Northern Virginia and we pride ourselves on expert coin buying and selling, offering a carefully curated selection from a variety of eras and regions.
+                        We sell and buy coins in Northern Virginia and we pride ourselves on expert coin buying and
+                        selling, offering a carefully curated selection from a variety of eras and regions.
                     </p>
                     <button onclick="openModal()" class="btn-primary">
                         Consult the experts
                     </button>
+                    <a href="tel:7037039355" class="btn-outline ml-0 sm:ml-4 mt-4 sm:mt-0">
+                        <i class="fas fa-phone-alt"></i> (703) 703-9355
+                    </a>
                 </div>
             </div>
         </section>
@@ -204,24 +246,30 @@
         <section class="py-20 bg-white text-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="reveal">
+                    <div class="reveal active">
                         <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Coins in Northern Virginia</h2>
                         <div class="bg-brand-gold/10 p-4 border-l-4 border-brand-gold mb-6 rounded-r">
                             <p class="text-brand-dark font-bold italic">
-                                "Will buy your broken or unwanted gold, silver and platinum necklaces, rings, bracelets, odd earrings – we’ll buy it all!"
+                                "Will buy your broken or unwanted gold, silver and platinum necklaces, rings, bracelets,
+                                odd earrings – we’ll buy it all!"
                             </p>
                         </div>
                         <p class="text-gray-600 mb-4 leading-relaxed">
-                            We sell and buy rare coins in Northern VA from the United States and around the world. Our experienced team is passionate about the stories each coin tells. We offer personalized consultations on the valuation of your coins, ensuring that you receive the highest possible valuation for the rare and valuable items in your possession.
+                            We sell and buy rare coins in Northern VA from the United States and around the world. Our
+                            experienced team is passionate about the stories each coin tells. We offer personalized
+                            consultations on the valuation of your coins, ensuring that you receive the highest possible
+                            valuation for the rare and valuable items in your possession.
                         </p>
                         <p class="text-gray-600 mb-4 leading-relaxed">
-                             We provide a transparent and honest transaction process, guaranteeing competitive prices based on current market valuations. Buyers will find potential treasures with us, whether they are adding to their collection or looking for the perfect gift.
+                            We provide a transparent and honest transaction process, guaranteeing competitive prices
+                            based on current market valuations. Buyers will find potential treasures with us, whether
+                            they are adding to their collection or looking for the perfect gift.
                         </p>
                     </div>
-                    <div class="reveal delay-100">
-                         <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-brand-gold/20">
+                    <div class="reveal delay-100 active">
+                        <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-brand-gold/20">
                             <!-- Placeholder image for Northern Virginia Coins -->
-                            <img src="https://placehold.co/600x400/1a1a1a/D4AF37?text=Northern+Virginia+Coins" alt="Coins in Northern Virginia" class="w-full h-full object-cover">
+                            <img src="resources/Buy-sell-coins-Alexandria-03.webp" alt="Coins in Northern Virginia" class="w-full h-full object-cover" style="cursor: pointer;">
                         </div>
                     </div>
                 </div>
@@ -230,34 +278,43 @@
 
         <!-- Market Context & Philosophy (Dark) -->
         <section class="py-24 bg-brand-dark-gray relative overflow-hidden">
-             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                 <div class="text-center mb-12 reveal">
-                     <h2 class="text-3xl font-heading font-bold text-white mb-6">A Bridge Between Past and Present</h2>
-                     <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                        In Northern Virginia, a region rich in history and culture, Fairfax Coin and Bullion Exchange serves as a bridge between past and present. We invite you to visit us and take a journey through time, exploring the world one coin at a time. Here in the heart of Northern Virginia, history is not just remembered, it is valued and traded, one coin at a time.
-                     </p>
-                 </div>
+                <div class="text-center mb-12 reveal active">
+                    <h2 class="text-3xl font-heading font-bold text-white mb-6">A Bridge Between Past and Present</h2>
+                    <p class="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                        In Northern Virginia, a region rich in history and culture, Fairfax Coin and Bullion Exchange
+                        serves as a bridge between past and present. We invite you to visit us and take a journey
+                        through time, exploring the world one coin at a time. Here in the heart of Northern Virginia,
+                        history is not just remembered, it is valued and traded, one coin at a time.
+                    </p>
+                </div>
 
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                     <div class="glass-panel p-6 rounded-xl reveal">
-                         <h4 class="text-brand-gold font-bold text-lg mb-3">Old US Coins</h4>
-                         <p class="text-sm text-gray-300">Lincoln penny, Morgan silver dollar, and other historical US coins. Valued for their age and historical significance. Regional dealers actively seek these.</p>
-                     </div>
-                     <div class="glass-panel p-6 rounded-xl reveal delay-100">
-                         <h4 class="text-brand-gold font-bold text-lg mb-3">Investment Coins</h4>
-                         <p class="text-sm text-gray-300">American Gold Eagle, Canadian Silver Maple Leaf. High purity and worldwide recognition make them reliable for capital accumulation.</p>
-                     </div>
-                     <div class="glass-panel p-6 rounded-xl reveal delay-200">
-                         <h4 class="text-brand-gold font-bold text-lg mb-3">Rare & Unique</h4>
-                         <p class="text-sm text-gray-300">Coins with minting flaws or limited editions. Treasures often found at local auctions, appreciated by true numismatists.</p>
-                     </div>
-                     <div class="glass-panel p-6 rounded-xl reveal delay-300">
-                         <h4 class="text-brand-gold font-bold text-lg mb-3">International Coins</h4>
-                         <p class="text-sm text-gray-300">European ducats, Japanese yen, and more. A variety of artistic designs and historical contexts opening windows to other worlds.</p>
-                     </div>
-                 </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="glass-panel p-6 rounded-xl reveal active">
+                        <h4 class="text-brand-gold font-bold text-lg mb-3">Old US Coins</h4>
+                        <p class="text-sm text-gray-300">Lincoln penny, Morgan silver dollar, and other historical US
+                            coins. Valued for their age and historical significance. Regional dealers actively seek
+                            these.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl reveal delay-100 active">
+                        <h4 class="text-brand-gold font-bold text-lg mb-3">Investment Coins</h4>
+                        <p class="text-sm text-gray-300">American Gold Eagle, Canadian Silver Maple Leaf. High purity
+                            and worldwide recognition make them reliable for capital accumulation.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl reveal delay-200">
+                        <h4 class="text-brand-gold font-bold text-lg mb-3">Rare &amp; Unique</h4>
+                        <p class="text-sm text-gray-300">Coins with minting flaws or limited editions. Treasures often
+                            found at local auctions, appreciated by true numismatists.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl reveal delay-300">
+                        <h4 class="text-brand-gold font-bold text-lg mb-3">International Coins</h4>
+                        <p class="text-sm text-gray-300">European ducats, Japanese yen, and more. A variety of artistic
+                            designs and historical contexts opening windows to other worlds.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -266,8 +323,10 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div class="reveal">
-                        <h3 class="text-3xl font-bold text-white mb-6 font-heading">What kind of coins do we sell and buy?</h3>
-                        <p class="text-gray-400 mb-6">We offer a wide range of options for collectors and investors interested in buying and selling coins in Northern Virginia.</p>
+                        <h3 class="text-3xl font-bold text-white mb-6 font-heading">What kind of coins do we sell and
+                            buy?</h3>
+                        <p class="text-gray-400 mb-6">We offer a wide range of options for collectors and investors
+                            interested in buying and selling coins in Northern Virginia.</p>
                         <ul class="list-gold text-gray-300 space-y-3">
                             <li>Old US coins (Lincoln penny, Morgan silver dollar)</li>
                             <li>Investment coins (Gold American Eagle, Silver Maple Leaf)</li>
@@ -281,7 +340,9 @@
                         <div class="bg-brand-gold/5 p-8 rounded-xl border border-brand-gold/10">
                             <h4 class="text-xl font-bold text-white mb-4">For Every Collector</h4>
                             <p class="text-gray-400 mb-4 text-sm leading-relaxed">
-                                We have all kinds of coins, from historical relics to high quality investment pieces. For some it’s an opportunity to touch history, for others it’s a stable investment vehicle, and for some it’s a way to broaden a collector’s horizons.
+                                We have all kinds of coins, from historical relics to high quality investment pieces.
+                                For some it’s an opportunity to touch history, for others it’s a stable investment
+                                vehicle, and for some it’s a way to broaden a collector’s horizons.
                             </p>
                         </div>
                     </div>
@@ -293,53 +354,68 @@
         <section class="py-24 bg-white text-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 reveal">
-                    <h2 class="text-3xl font-bold text-brand-dark mb-4 font-heading">How do we grade coins in Northern Virginia?</h2>
+                    <h2 class="text-3xl font-bold text-brand-dark mb-4 font-heading">How do we grade coins in Northern
+                        Virginia?</h2>
                     <p class="text-gray-600 max-w-3xl mx-auto">
-                        Coin grading is both an art and a science. In Northern Virginia, this process combines experience, historical insight, and modern precision.
+                        Coin grading is both an art and a science. In Northern Virginia, this process combines
+                        experience, historical insight, and modern precision.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     <!-- Step 1 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">1</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Sheldon Scale</h4>
-                         <p class="text-sm text-gray-600">Using the universally recognized scale from 1 to 70 as a fundamental guide for determining a coin’s condition.</p>
-                     </div>
-                     <!-- Step 2 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">2</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Magnification</h4>
-                         <p class="text-sm text-gray-600">Evaluating minting quality, luster, details, and signs of wear under magnification.</p>
-                     </div>
-                     <!-- Step 3 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-200">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">3</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Historical Context</h4>
-                         <p class="text-sm text-gray-600">Recognizing significance of regional coins: Confederate currency, early U.S. Mint issues, Civil War artifacts.</p>
-                     </div>
-                     <!-- Step 4 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-300">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">4</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Technology</h4>
-                         <p class="text-sm text-gray-600">Advanced imaging and digital zoom for accurate grading, reducing human error.</p>
-                     </div>
-                     <!-- Step 5 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">5</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Preservation</h4>
-                         <p class="text-sm text-gray-600">Preserving bits of history, ensuring each coin's story is honored for future generations.</p>
-                     </div>
-                     <!-- Step 6 -->
-                     <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
-                         <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">6</div>
-                         <h4 class="font-bold text-lg mb-2 text-brand-dark">Reverence</h4>
-                         <p class="text-sm text-gray-600">Treating each coin, from colonial relics to modern mint marvels, with the utmost respect.</p>
-                     </div>
+                    <!-- Step 1 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            1</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Sheldon Scale</h4>
+                        <p class="text-sm text-gray-600">Using the universally recognized scale from 1 to 70 as a
+                            fundamental guide for determining a coin’s condition.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            2</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Magnification</h4>
+                        <p class="text-sm text-gray-600">Evaluating minting quality, luster, details, and signs of wear
+                            under magnification.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-200">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            3</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Historical Context</h4>
+                        <p class="text-sm text-gray-600">Recognizing significance of regional coins: Confederate
+                            currency, early U.S. Mint issues, Civil War artifacts.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-300">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            4</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Technology</h4>
+                        <p class="text-sm text-gray-600">Advanced imaging and digital zoom for accurate grading,
+                            reducing human error.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            5</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Preservation</h4>
+                        <p class="text-sm text-gray-600">Preserving bits of history, ensuring each coin's story is
+                            honored for future generations.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow reveal delay-100">
+                        <div class="w-10 h-10 bg-brand-dark text-white rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                            6</div>
+                        <h4 class="font-bold text-lg mb-2 text-brand-dark">Reverence</h4>
+                        <p class="text-sm text-gray-600">Treating each coin, from colonial relics to modern mint
+                            marvels, with the utmost respect.</p>
+                    </div>
                 </div>
 
                 <div class="mt-12 text-center text-gray-600 italic reveal">
-                    "In Northern Virginia, history resounds in every corner, from the cobblestone streets of Alexandria to the vast fields of Manassas."
+                    "In Northern Virginia, history resounds in every corner, from the cobblestone streets of Alexandria
+                    to the vast fields of Manassas."
                 </div>
             </div>
         </section>
@@ -347,12 +423,15 @@
         <!-- CTA Section -->
         <section class="py-20 bg-brand-gold">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Contact our experts in Northern Virginia</h2>
+                <h2 class="text-3xl font-bold text-brand-dark mb-6 font-heading">Contact our experts in Northern
+                    Virginia</h2>
                 <p class="text-brand-dark/80 text-lg mb-8 max-w-2xl mx-auto font-medium">
-                    Contact our specialist with any questions you may have. Make an appointment to have your valuables appraised and sold. We offer formal appraisals on coin collections when needed, as well as buying the estate outright, whichever fits your needs.
+                    Contact our specialist with any questions you may have. Make an appointment to have your valuables
+                    appraised and sold. We offer formal appraisals on coin collections when needed, as well as buying
+                    the estate outright, whichever fits your needs.
                 </p>
                 <div class="flex justify-center gap-4">
-                     <button onclick="openModal()" class="bg-brand-dark text-white font-bold py-3 px-8 rounded hover:bg-black transition-colors">
+                    <button onclick="openModal()" class="bg-brand-dark text-white font-bold py-3 px-8 rounded hover:bg-black transition-colors">
                         Make Appointment
                     </button>
                     <a href="tel:7037039355" class="border-2 border-brand-dark text-brand-dark font-bold py-3 px-8 rounded hover:bg-brand-dark hover:text-white transition-colors">
@@ -365,14 +444,15 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+    <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8 text-center md:text-left">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Col 1 -->
                 <div>
                     <h3 class="text-white font-heading font-bold text-lg mb-6">Fairfax Coin</h3>
                     <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's trusted partner.
+                        We are committed to integrity and providing maximum value for your holdings. Northern Virginia's
+                        trusted partner.
                     </p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-gold hover:bg-white/10 transition-all">
@@ -388,12 +468,17 @@
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Local Services</h4>
                     <ul class="space-y-3 text-xs text-gray-500">
-                        <li><a href="coins-in-fairfax-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
-                        <li><a href="coins-in-alexandria-va.html" class="hover:text-brand-gold transition-colors">Coins in Alexandria, VA</a></li>
-                        <li><a href="coins-in-arlington-va.html" class="hover:text-brand-gold transition-colors">Coins in Arlington, VA</a></li>
-                        <li><a href="coins-in-northern-virginia.html" class="hover:text-brand-gold transition-colors">Coins in Northern Virginia</a></li>
-                        <li><a href="gold-silver-in-manassas-va.html" class="hover:text-brand-gold transition-colors">Gold & Silver in Manassas</a></li>
-                        <li><a href="sell-coins-in-fairfax-va.html" class="hover:text-brand-gold transition-colors">Sell Coins in Fairfax</a></li>
+                        <li><a href="coins-in-fairfax-northern-virginia" class="hover:text-brand-gold transition-colors">Coins in Fairfax, VA</a></li>
+                        <li><a href="coins-in-alexandria-va" class="hover:text-brand-gold transition-colors">Coins in
+                                Alexandria, VA</a></li>
+                        <li><a href="coins-in-arlington-va" class="hover:text-brand-gold transition-colors">Coins in
+                                Arlington, VA</a></li>
+                        <li><a href="coins-in-northern-virginia" class="hover:text-brand-gold transition-colors">Coins
+                                in Northern Virginia</a></li>
+                        <li><a href="gold-silver-in-manassas-va" class="hover:text-brand-gold transition-colors">Gold &amp;
+                                Silver in Manassas</a></li>
+                        <li><a href="sell-coins-in-fairfax-va" class="hover:text-brand-gold transition-colors">Sell
+                                Coins in Fairfax</a></li>
                     </ul>
                 </div>
 
@@ -401,11 +486,15 @@
                 <div>
                     <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-6">Quick Links</h4>
                     <ul class="space-y-3 text-sm text-gray-500">
-                        <li><a href="coins.html" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
-                        <li><a href="gold.html" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
-                        <li><a href="jewelry.html" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
-                        <li><a href="currency.html" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
+                        <li><a href="coins" class="hover:text-brand-gold transition-colors">Numismatic Coins</a></li>
+                        <li><a href="gold" class="hover:text-brand-gold transition-colors">Bullion Investment</a></li>
+                        <li><a href="silver" class="hover:text-brand-gold transition-colors">Silver Bullion</a></li>
+                        <li><a href="jewelry" class="hover:text-brand-gold transition-colors">Fine Jewelry</a></li>
+                        <li><a href="watches" class="hover:text-brand-gold transition-colors">Premier Watches</a></li>
+                        <li><a href="currency" class="hover:text-brand-gold transition-colors">Paper Currency</a></li>
+                        <li><a href="stamps" class="hover:text-brand-gold transition-colors">Stamps</a></li>
+                        <li><a href="collectibles" class="hover:text-brand-gold transition-colors">Collectibles</a></li>
+                        <li><a href="contact" class="hover:text-brand-gold transition-colors">Make Appointment</a></li>
                     </ul>
                 </div>
 
@@ -453,5 +542,18 @@
     <!-- Scripts -->
     <script src="main.js"></script>
 
-</body>
-</html>
+
+    <!-- Fixed Bottom Panel -->
+    <div class="fixed bottom-0 left-0 w-full bg-brand-dark border-t border-white/10 p-4 z-50 flex justify-between gap-4 md:hidden">
+        <button onclick="openModal()" class="btn-primary flex-1 text-center justify-center text-xs">
+            Make Appointment
+        </button>
+        <a href="tel:7037039355" class="btn-outline flex-1 text-center justify-center text-xs">
+            <i class="fas fa-phone-alt mr-2"></i> Call
+        </a>
+    </div>
+
+
+
+
+</body></html>
